@@ -4,7 +4,10 @@
   "description": "An open source music sharing platform where musicians can post and download original tracks.",
   "main": "karma.conf.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "webpack",
+  "build-watch": "webpack-dev-server --inline --hot",
+  "test": "karma start --single-run",
+  "test-watch": "karma start"
   },
   "repository": {
     "type": "git",
