@@ -16,11 +16,11 @@ module.exports = {
       this.title = 'Sign Up';
 
       this.signup = function(user) {
-        $log.debug('signupCtrl.signup()');
+        $log.debug('signupCtrl.signup()')
 
         authService.signup(user)
-        .then(() => $location.url('/home'));
-      };
-    };
+        .then(() => $location.url('/home'))
+      }
+    }
   }]
-};
+}
