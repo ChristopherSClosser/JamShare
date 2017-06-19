@@ -1,18 +1,18 @@
 'use strict';
 
-// require('./_landing.scss');
+require('./_landing.scss')
 
 module.exports = [
   '$log',
   '$location',
   '$rootScope',
   'authService',
-  LandingController];
+  LandingController]
 
 function LandingController($log, $location) {
   this.$onInit = () => {
-    let url = $location.url();
-    $log.log('url', url);
-    this.showSignup = url === '/join#signup' || url === '/join';
-  };
+    let url = $location.url()
+    $log.log('url', url)
+    this.showSignup = url === '/join#signup' || url === '/join'
+  }
 }
