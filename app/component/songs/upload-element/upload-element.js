@@ -15,7 +15,7 @@ module.exports = {
         this.elem = {}
 
         this.uploadElem = () => {
-          ElemService.uploadElem(this.gallery, this.elem)
+          ElemService.uploadElem(this.song, this.elem)
           .then(() => {
             this.elem.name = null
             this.elem.description = null

@@ -21,6 +21,13 @@ module.exports = ['$stateProvider','$urlRouterProvider',
         template: require('../view/landing/landing.html'),
         controller: 'LandingController',
         controllerAs: 'landingCtrl'
+      },
+      {
+        name: 'profile',
+        url: '/profile',
+        template: require('../view/profile/profile.html'),
+        controller: 'ProfileController',
+        controllerAs: 'profileCtrl'
       }
     ]
     routes.forEach($stateProvider.state)
