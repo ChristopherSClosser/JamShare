@@ -1,24 +1,29 @@
 {
-  "rules": {
-    "comma-dangle": ["error", "always-multiline"],
-    "no-console": "off",
-    "indent": [ "error", 2 ],
-    "quotes": [ "error", "single" ],
-    "semi": ["error", "never"],
-    "linebreak-style": [ "error", "unix" ]
+  "extends": "eslint:recommended",
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "ecmaFeatures": {"impliedStrict": true}
   },
   "env": {
-    "es6": true,
-    "node": true,
+    "browser": true,
     "mocha": true,
-    "jasmine": true
+    "node": true,
+    "es6": true
   },
   "globals": {
-  },
-  "ecmaFeatures": {
-    "modules": true,
-    "experimentalObjectRestSpread": true,
-    "impliedStrict": true
-  },
-  "extends": "eslint:recommended"
+    "__API_URI__": true,
+    "__DEBUG__": false
+    },
+  "rules": {
+    "eqeqeq": ["error", "always"],
+    "no-template-curly-in-string": "error",
+    "no-console": "off",
+    "no-undefined": "off",
+    "indent": ["error", 2],
+    "quotes": ["warn", "single", {"allowTemplateLiterals": true}],
+    "no-multi-spaces": ["warn", {"exceptions": { "VariableDeclarator": true }}],
+    "no-trailing-spaces": "warn",
+    "new-cap": "warn",
+    "no-redeclare": ["error", { "builtinGlobals": true }]
+  }
 }
