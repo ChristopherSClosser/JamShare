@@ -5,9 +5,9 @@
   "main": "karma.conf.js",
   "scripts": {
     "build": "webpack",
-  "build-watch": "webpack-dev-server --inline --hot",
-  "test": "karma start --single-run",
-  "test-watch": "karma start"
+    "build-watch": "webpack-dev-server --inline --hot",
+    "test": "karma start --single-run",
+    "test-watch": "karma start"
   },
   "repository": {
     "type": "git",
