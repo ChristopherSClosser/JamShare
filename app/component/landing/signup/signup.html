@@ -24,7 +24,9 @@
           class="input-std"
           type="text"
           placeholder="password"
-          ng-minlength="3"
+          ng-minlength="7"
+          ng-include="Number"
+          ng-include="lowercase"
           ng-model="signupCtrl.user.password"
           required>
 
