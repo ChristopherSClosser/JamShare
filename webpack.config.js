@@ -2,12 +2,12 @@
 
 require('dotenv').load();
 
-const webpack = require('webpack');
-const HTMLPlugin = require('html-webpack-plugin');
-const CleanPlugin = require('clean-webpack-plugin');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const webpack = require('webpack')
+const HTMLPlugin = require('html-webpack-plugin')
+const CleanPlugin = require('clean-webpack-plugin')
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
-const production = process.env.NODE_ENV === 'production';
+const production = process.env.NODE_ENV === 'production'
 
 let plugins = [
   new ExtractTextPlugin({ filename: 'bundle.css' }),
@@ -16,7 +16,7 @@ let plugins = [
     __API_URL__: JSON.stringify(process.env.API_URL),
     __DEBUG__: JSON.stringify(!production)
   })
-];
+]
 
 if(production) {
   plugins = plugins.concat([
@@ -25,7 +25,7 @@ if(production) {
       compress: { warnings: false }
     }),
     new CleanPlugin()
-  ]);
+  ])
 }
 
 module.exports = {
@@ -74,4 +74,4 @@ module.exports = {
       }
     ]
   }
-};
+}

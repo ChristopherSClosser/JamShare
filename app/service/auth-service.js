@@ -1,51 +1,51 @@
-'use strict';
+'use strict'
 
 module.exports = [
   '$q',
   '$log',
   '$http',
   '$window',
-  authService];
+  authService]
 
 function authService($q, $log, $http, $window) {
-  $log.debug('authService');
+  $log.debug('authService')
 
-  let service = {};
-  let token = null;
+  let service = {}
+  let token = null
 
   function setToken(_token) {
-    $log.debug('authService.setToken()');
+    $log.debug('authService.setToken()')
 
-    if(!_token) return $q.reject(new Error('No token'));
-    $window.localStorage.setItem('token', _token);
-    token = _token;
+    if(!_token) return $q.reject(new Error('No token'))
+    $window.localStorage.setItem('token', _token)
+    token = _token
 
-    return $q.resolve(token);
+    return $q.resolve(token)
   }
 
   service.getToken = function() {
-    $log.debug('authService.getToken()');
+    $log.debug('authService.getToken()')
 
-    if(token) return $q.resolve(token);
-    token = $window.localStorage.getItem('token');
-    if(token) return $q.resolve(token);
+    if(token) return $q.resolve(token)
+    token = $window.localStorage.getItem('token')
+    if(token) return $q.resolve(token)
 
-    return $q.reject(new Error('Token not found'));;
+    return $q.reject(new Error('Token not found'))
   };
 
   service.logout = function() {
-    $log.debug('authService.logout()');
+    $log.debug('authService.logout()')
 
-    $window.localStorage.removeItem('token');
+    $window.localStorage.removeItem('token')
     token = null;
 
-    return $q.resolve();
+    return $q.resolve()
   };
 
   service.signup = function(user) {
-    $log.debug('authService.signup()');
+    $log.debug('authService.signup()')
 
-    let url = `${__API_URL__}/api/signup`;
+    let url = `${__API_URL__}/api/signup`// eslint-disable-line
     let config = {
       headers: {
         'Content-Type': 'application/json',
@@ -55,37 +55,37 @@ function authService($q, $log, $http, $window) {
 
     return $http.post(url, user, config)
     .then(res => {
-      $log.log('success', res.data);
-      return setToken(res.data);
+      $log.log('success', res.data)
+      return setToken(res.data)
     })
     .catch(err => {
-      $log.error('failure', err);
+      $log.error('failure', err)
       return $q.reject(err);
     });
   };
 
   service.login = function(user) {
-    $log.debug('authService.login()');
-    $log.log(user);
+    $log.debug('authService.login()')
+    $log.log(user)
 
-    let url = `${__API_URL__}/api/login`;
-    let base64 = $window.btoa(`${user.username}:${user.password}`);
+    let url = `${__API_URL__}/api/login`// eslint-disable-line
+    let base64 = $window.btoa(`${user.username}:${user.password}`)
     let config = {
       headers: {
         Accept: 'application/json',
         Authorization: `Basic ${base64}`
       }
-    };
+    }
 
     return $http.get(url, config)
     .then(res => {
-      $log.log('success', res.data);
-      return setToken(res.data);
+      $log.log('success', res.data)
+      return setToken(res.data)
     })
     .catch(err =>{
-      $log.error('failure', err.message);
-      return $q.reject(err);
-    });
-  };
-  return service;
+      $log.error('failure', err.message)
+      return $q.reject(err)
+    })
+  }
+  return service
 }

@@ -20,10 +20,10 @@ module.exports = {
         }
 
         this.login = function() {
-          $log.log('loginCtrl.login()');
+          $log.log('loginCtrl.login()')
 
           authService.login(this.user)
-          .then(() => $location.url('/home'));
+          .then(() => $location.url('/home'))
         };
       };
     }

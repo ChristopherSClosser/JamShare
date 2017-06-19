@@ -1,7 +1,7 @@
 'use strict';
 
-const webpack = require('./webpack.config.js');
-delete webpack.entry;
+const webpack = require('./webpack.config.js')
+delete webpack.entry
 
 module.exports = function(config) {
   config.set({
@@ -31,5 +31,5 @@ module.exports = function(config) {
     browsers: ['Chrome'],
     singleRun: false,
     concurrency: Infinity
-  });
-};
+  })
+}
