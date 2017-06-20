@@ -11,7 +11,7 @@ module.exoprts = [
   'songService',
   function($log, $rootScope, $window, $location, authService, songService) {
     this.$onInit = () => {
-      $log.debug('HomeController()')
+      $log.debug('HomeController')
       if(!window.localStorage.token){
         authService.getToken()
         .then(
