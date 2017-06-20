@@ -1,28 +1,31 @@
 'use strict'
 
-require('./_home.scss')
+require('./_splash.scss')
 
-module.exoprts = [
+module.exports = [
   '$log',
-  '$rootScope',
   '$window',
   '$location',
+  '$rootScope',
   'authService',
   'songService',
-  function($log, $rootScope, $window, $location, authService, songService) {
+  function($log, $window, $location, $rootScope, authService, songService) {
+    $log.debug('Splash Controller')
     this.$onInit = () => {
-      $log.debug('HomeController()')
+
       if(!window.localStorage.token){
         authService.getToken()
         .then(
           () => $location.url('/home'),
-          () => $location.url('/signup')
+          () => $location.url('/signup'),
+          () => $location.url('/profile')
         )
       }
       this.songs = []
 
       this.fetchSongs = () => {
-        return songService.fetchSongs()
+        $log.log(songService)
+        return songService.fetchsongs()
         .then(songs => {
           this.songs = songs
           this.currentSong = songs[0]
@@ -30,6 +33,8 @@ module.exoprts = [
         err => $log.error(err)
         )
       }
+      this.fetchSongs()
+
       $rootScope.$on('locationChangeSuccess', this.fetchSongs)
       $rootScope.$on('newSongCreated', this.fetchSongs)
       $rootScope.$on('updateCurrentSong', (eve, songId) => {
@@ -40,7 +45,6 @@ module.exoprts = [
           }
         }
       })
-      return this.fetchSongs()
     }
   }
 ]

@@ -25,8 +25,3 @@ module.exports = {
       }
     }]
 }
-
-let user = {
-  "username":"lerfmishnippenmesderf",
-  "password":"sdfniugd99fgd8"
-}

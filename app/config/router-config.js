@@ -1,20 +1,13 @@
 'use strict'
 
-module.exports = ['$stateProvider','$urlRouterProvider',
-  function($stateProvider, $urlRouterProvider) {
-    $urlRouterProvider.when('', '/join#signup')
-    $urlRouterProvider.when('/', '/join#signup')
-    $urlRouterProvider.when('/signup', '/join#signup')
-    $urlRouterProvider.when('/login', '/join#login')
+module.exports = ['$stateProvider','$urlServiceProvider',
+  function($stateProvider, $urlServiceProvider) {
+    $urlServiceProvider.rules.when('', '/home')
+    $urlServiceProvider.rules.when('/', '/home')
+    $urlServiceProvider.rules.when('/signup', '/join#signup')
+    $urlServiceProvider.rules.when('/login', '/join#login')
 
     let routes = [
-      {
-        name: 'home',
-        url: '/home',
-        template: require('../view/home/home.html'),
-        controller: 'HomeController',
-        controllerAs: 'homeCtrl'
-      },
       {
         name: 'landing',
         url: '/join',
@@ -22,6 +15,20 @@ module.exports = ['$stateProvider','$urlRouterProvider',
         controller: 'LandingController',
         controllerAs: 'landingCtrl'
       },
+      {
+        name: 'splash',
+        url: '/home',
+        template: require('../view/splash/splash.html'),
+        controller: 'SplashController',
+        controllerAs: 'splashCtrl'
+      },
+      // {
+      //   name: 'home',
+      //   url: '/home',
+      //   template: require('../view/home/home.html'),
+      //   controller: 'HomeController',
+      //   controllerAs: 'homeCtrl'
+      // },
       {
         name: 'profile',
         url: '/profile',

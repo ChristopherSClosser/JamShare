@@ -32,6 +32,12 @@ function NavbarController($log, $location, $rootScope, authService) {
     $rootScope.$on('$locationChangeSuccess', () => {
       this.checkPath();
     });
+    this.signup = function(user) {
+      $log.debug('signupCtrl.signup()')
+
+      authService.signup(user)
+      .then(() => $location.url('/home'))
+    }
 
     this.logout = function() {
       $log.log('navbarCtrl.logout()');
