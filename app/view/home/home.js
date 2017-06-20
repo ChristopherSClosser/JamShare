@@ -16,7 +16,8 @@ module.exoprts = [
         authService.getToken()
         .then(
           () => $location.url('/home'),
-          () => $location.url('/signup')
+          () => $location.url('/signup'),
+          () => $location.url('/profile')
         )
       }
       this.songs = []
