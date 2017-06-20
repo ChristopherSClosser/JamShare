@@ -6,6 +6,8 @@ const path = require('path')
 const camelcase = require('camelcase')
 const pascalcase = require('pascalcase')
 const angular = require('angular')
+// require('gridfs')
+// require('gridfs-stream')
 require('angular-oauth2');
 require('@uirouter/angularjs')
 require('query-string');
