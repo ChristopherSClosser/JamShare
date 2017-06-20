@@ -2,11 +2,10 @@
   <div class="join-container"
     ng-if="landingCtrl.showSignup">
     <div class="join-inner">
-      <signup></signup>
-      <p>'Yall a member already?</p>
-      <a href="/#!/login"
+      <!-- <signup></signup> -->
+      <!-- <a href="/#!/login"
         ng-click="landingCtrl.showSignup=false">
-        Well, sign the fuck in then!
+        sign in -->
       </a>
     </div>
   </div>
@@ -14,11 +13,10 @@
   <div class="join-container"
     ng-if="!landingCtrl.showSignup">
     <div class="join-inner">
-      <login></login>
-      <p>You want to sign up maybe?</p>
-      <a href="/#!/signup"
+      <!-- <login></login> -->
+      <!-- <a href="/#!/signup"
         ng-click="landingCtrl.showSignup=true">
-        You should maybe be signing up here then.
+        signup -->
       </a>
     </div>
   </div>

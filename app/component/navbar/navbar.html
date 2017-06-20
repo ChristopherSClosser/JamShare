@@ -1,10 +1,17 @@
 <section class="navbar">
-    <h2>NAVBAAAAR!</h2>
+
+    <h2></h2>
 
     <nav>
-      <div ng-hide="navbarCtrl.hideButtons">
-        <button class="btn-std" ng-click="navbarCtrl.logout()">LOGOUT</button>
+      <div>
+        <button class="btn-std" ng-click="navbarCtrl.logout()">logout</button>
+        <button class="btn-std" ng-click="loginCtrl.login()">login</button>
+        <button class="btn-std" ng-click="signupCtrl.showSignup">signup</button>
       </div>
-    </nav>
+      <!-- <signup></signup>
+      <a href="/#!/login"
+        ng-click="landingCtrl.showSignup=false">
+        sign in
+    </nav> -->
 
 </section>
