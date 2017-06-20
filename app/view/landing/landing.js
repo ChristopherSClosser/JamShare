@@ -7,9 +7,10 @@ module.exports = [
   '$location',
   '$rootScope',
   'authService',
-  LandingController]
+  LandingController,
+]
 
-function LandingController($log, $location) {
+function LandingController($log, $location, $rootScope, authService) {// eslint-disable-line
   this.$onInit = () => {
     let url = $location.url()
     $log.log('url', url)

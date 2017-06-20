@@ -22,7 +22,7 @@ module.exports = [
             Authorization: `Bearer ${token}`
           }
         }
-        return $http.post(`${__API_URL__}/api/song`, song, config)// eslint-disable-line
+        return $http.post(`${__API_URL__}api/song`, song, config)// eslint-disable-line
       })
       .then(res => {
         $log.log('song created')
@@ -41,7 +41,7 @@ module.exports = [
 
       return authService.getToken()
       .then(token => {
-        let url = `${__API_URL__}/api/song/${songId}/` // eslint-disable-line
+        let url = `${__API_URL__}api/song/${songId}/` // eslint-disable-line
         let config = {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -75,7 +75,7 @@ module.exports = [
             Authorization: `Bearer ${token}`
           }
         }
-        return $http.get(`${__API_URL__}/api/song`, config) // eslint-disable-line
+        return $http.get(`${__API_URL__}api/song`, config) // eslint-disable-line
       })
       .then(res => {
         $log.log('songs retrieved')
@@ -93,7 +93,7 @@ module.exports = [
 
       return authService.getToken()
       .then(token => {
-        let url = `${__API_URL__}/api/song/${songId}` // eslint-disable-line
+        let url = `${__API_URL__}api/song/${songId}` // eslint-disable-line
         let config = {
           headers: {
             Accept: 'application/json',
