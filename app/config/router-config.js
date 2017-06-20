@@ -2,8 +2,8 @@
 
 module.exports = ['$stateProvider','$urlRouterProvider',
   function($stateProvider, $urlRouterProvider) {
-    $urlRouterProvider.when('', '/join#signup')
-    $urlRouterProvider.when('/', '/join#signup')
+    $urlRouterProvider.when('', '/home')
+    $urlRouterProvider.when('/', '/home#home')
     $urlRouterProvider.when('/signup', '/join#signup')
     $urlRouterProvider.when('/login', '/join#login')
 
