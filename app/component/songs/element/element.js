@@ -16,7 +16,7 @@ module.exports = {
       this.$onInit = () => {
         $log.debug('elementCtrl');
 
-        this.deletePic = () => {
+        this.deleteElem = () => {
           $log.debug('#thumbnailCtrl.deleteElem');
 
           elemService.deleteElem(this.song, this.elem);
