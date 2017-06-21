@@ -5,10 +5,12 @@ module.exports = [
   '$log',
   '$http',
   '$window',
-  function($q, $log, $http, $window, profileService) {//eslint-disable-line
+  'authService',
+  function($q, $log, $http, $window, authService) {//eslint-disable-line
     $log.debug('profileService')
 
     let service = {}
+    let token = null
 
     service.currentUser = function() {
 
@@ -16,13 +18,15 @@ module.exports = [
       let config = {
         headers: {
           'Content-Type': 'application/json',
-          'Accept': 'application/json'
+          'Accept': 'application/json',
+          Authorization: `Bearer ${token}`
         }
       }
       return $http.get(url, config)
       .then(res => {
         $log.log('success', res.data)
-        return (res.data)
+        let user = res.data
+        return user
       })
       .catch(err =>{
         $log.error('failure', err.message)
