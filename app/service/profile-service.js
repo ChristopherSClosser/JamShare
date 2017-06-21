@@ -9,11 +9,9 @@ module.exports = [
     $log.debug('profileService')
 
     let service = {}
-    let token = null
 
-    service.currentUser = function(user) {
+    service.currentUser = function() {
 
-      let currentUser
       let url = `${__API_URL__}/api/profile`// eslint-disable-line
       let config = {
         headers: {
@@ -24,7 +22,7 @@ module.exports = [
       return $http.get(url, config)
       .then(res => {
         $log.log('success', res.data)
-        return currentUser(res.data)
+        return (res.data)
       })
       .catch(err =>{
         $log.error('failure', err.message)
