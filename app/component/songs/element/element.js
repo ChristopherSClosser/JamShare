@@ -11,15 +11,15 @@ module.exports = {
   },
   controller: [
     '$log',
-    'elemService',
-    function($log, elemService) {
+    'elementService',
+    function($log, elementService) {
       this.$onInit = () => {
         $log.debug('elementCtrl');
 
         this.deleteElem = () => {
           $log.debug('#thumbnailCtrl.deleteElem');
 
-          elemService.deleteElem(this.song, this.elem);
+          elementService.deleteElem(this.song, this.elem);
         };
       };
     },
