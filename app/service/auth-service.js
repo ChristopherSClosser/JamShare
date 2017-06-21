@@ -62,10 +62,6 @@ module.exports = [
       })
     }
 
-    service.currentUser = function(user) {
-      
-    }
-
     service.login = function(user) {
       $log.debug('authService.login()')
 
@@ -73,7 +69,7 @@ module.exports = [
       let base64 = $window.btoa(`${user.username}:${user.password}`)
       let config = {
         headers: {
-          Accept: 'application/json',
+          'Accept': 'application/json',
           Authorization: `Basic ${base64}`
         }
       }
