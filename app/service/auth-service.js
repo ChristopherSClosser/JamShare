@@ -62,6 +62,10 @@ module.exports = [
       })
     }
 
+    service.currentUser = function(user) {
+      
+    }
+
     service.login = function(user) {
       $log.debug('authService.login()')
 
