@@ -6,7 +6,7 @@ module.exports = {
   template: require('./upload-element.html'),
   controllerAs: 'uploadElemCtrl',
   bindings: {
-    gallery: '<'
+    song: '<'
   },
   controller: [
     '$log', 'elemService', function($log, ElemService) {
