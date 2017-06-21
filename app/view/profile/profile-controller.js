@@ -7,12 +7,12 @@ module.exports = [
   '$rootScope',
   '$window',
   '$location',
+  'profileService',
   'authService',
   'songService',
-  function($log, $rootScope, $window, $location, authService, songService) {//eslint-disable-line
-    $log.log($rootScope, 'here is the rootScope')
+  function($log, $rootScope, $window, $location, profileService, authService, songService) {//eslint-disable-line
     this.$onInit = () => {
-      this.username = songService.signupCtrl.user.username
+      this.username = authService.currentUser
       $log.debug('ProfileController')
       if(!$window.localStorage.token) {
         authService.getToken()
