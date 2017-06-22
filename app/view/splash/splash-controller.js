@@ -13,7 +13,7 @@ module.exports = [
     $log.debug('Splash Controller')
     this.$onInit = () => {
 
-      if(!window.localStorage.token){
+      if(!$window.localStorage.token){
         authService.getToken()
         .then(
           () => $location.url('/home'),
@@ -38,12 +38,13 @@ module.exports = [
       }
 
       $rootScope.$on('locationChangeSuccess', this.fetchSongs)
-      $rootScope.$on('newSongCreated', this.fetchSongs)
+      $rootScope.$on('newSongCreated', this.fetchSongs)//need to add show upoad pic controller
       $rootScope.$on('updateCurrentSong', (eve, songId) => {
         for(let i = 0; this.songs.length; i++) {
           if(this.songs[i]._id === songId) {
             this.currentSong = this.songs[i]
-            break
+            console.log('muh song', this.song);
+            break;
           }
         }
       })

@@ -110,6 +110,7 @@ module.exports = [
           console.log('the ele', ele);
           if(ele._id === res.data._id) service.songs[idx] = res.data
         })
+        console.log('muh data', res.data);
         return res.data
       })
       .catch(err => {
