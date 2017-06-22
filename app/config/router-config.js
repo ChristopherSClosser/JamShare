@@ -29,14 +29,14 @@ module.exports = ['$stateProvider','$urlServiceProvider',
       //   controller: 'HomeController',
       //   controllerAs: 'homeCtrl'
       // },
-      {
-        name: 'profile',
-        url: '/profile',
-        template: require('../view/profile/profile.html'),
-        controller: 'ProfileController',
-        controllerAs: 'profileCtrl'
-      }
+      // {
+      //   name: 'profile',
+      //   url: '/profile',
+      //   template: require('../view/profile/profile.html'),
+      //   controller: 'ProfileController',
+      //   controllerAs: 'profileCtrl'
+      // }
     ]
     routes.forEach($stateProvider.state)
   }
-] //use the new url provider in future labs: $urlServiceProvider
+]

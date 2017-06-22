@@ -1,3 +1,18 @@
-<section class="home">
-  <h2>Hello world</h2>
-</section>
+<section class="splash-content">
+  <h2>{{ splashCtrl.title }}</h2>
+  <profile></profile>
+  <create-song>
+  </create-song><br>
+  <element-container ng-if="splashCtrl.currentSong"  song="splashCtrl.currentSong"></element-container><br>
+  <label for="song-selection">select the song you would<br>like to add elements to: </label>
+  <select
+  name="song-selection"
+  ng-options="item as item.name for item in splashCtrl.songs track by item._id"
+  ng-model="splashCtrl.currentSong"></select><hr>
+  <ul class="song-item">
+    <div>
+        <song-item uib-accordian-group class="panel-default" ng-repeat="item in splashCtrl.songs"
+        currentSong="splashCtrl.currentSong"
+        songs="splashCtrl.songs" song="item"></song-item>
+    </div>
+  </ul>

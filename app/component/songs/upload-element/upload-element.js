@@ -4,22 +4,25 @@ require('./_upload-element.scss')
 
 module.exports = {
   template: require('./upload-element.html'),
-  controllerAs: 'uploadElemCtrl',
+  controllerAs: 'uploadElementCtrl',
   bindings: {
     song: '<'
   },
   controller: [
-    '$log', 'elemService', function($log, ElemService) {
+    '$log', 'elementService', function($log, elementService) {
       this.$onInit = () => {
-        $log.log('uploadElemController initialized')
-        this.elem = {}
+        $log.debug('uploadElementController initialized')
+        this.element = {}
 
-        this.uploadElem = () => {
-          ElemService.uploadElem(this.song, this.elem)
+        this.uploadElement = () => {
+          console.log('here again', this.song);
+
+          elementService.uploadElement(this.song, this.element)
           .then(() => {
-            this.elem.name = null
-            this.elem.description = null
-            this.elem.file = null
+            console.log('the element', this.song);
+            this.element.name = null
+            this.element.desc = null
+            this.element.file = null
           },
           err => $log.error(err)
           )

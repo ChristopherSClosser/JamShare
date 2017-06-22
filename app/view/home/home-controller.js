@@ -37,8 +37,8 @@
 //       $rootScope.$on('locationChangeSuccess', this.fetchSongs)
 //       $rootScope.$on('newSongCreated', this.fetchSongs)
 //       $rootScope.$on('updateCurrentSong', (eve, songId) => {
-//         for(let i = 0; this.pics.length; i++) {
-//           if(this.pics[i]._id === songId) {
+//         for(let i = 0; this.elems.length; i++) {
+//           if(this.elems[i]._id === songId) {
 //             this.currentSong = this.songs[i]
 //             break
 //           }

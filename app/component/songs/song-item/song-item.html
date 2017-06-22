@@ -1,0 +1,13 @@
+<li uib-accordian-group heading="{{ songItemCtrl.song.name | uppercase }}">
+  <h4>created: {{ songItemCtrl.song.created | date }}</h4>
+  <div ng-if="!songItemCtrl.showEditSong">
+    <ul>
+      <li>title: {{ songItemCtrl.song.name }}</li>
+      <li>description: {{ songItemCtrl.song.desc }}</li>
+      <li>id: {{ songItemCtrl.song._id }}</li>
+    </ul>
+  </div>
+
+ <edit-song ng-if="songItemCtrl.showEditSong" song="songItemCtrl.song"></edit-song>
+  <a href ng-click="butn = !butn"><button ng-show="!butn" ng-click="songItemCtrl.showEditSong =
+    !songItemCtrl.showEditSong">edit</button></a><hr>

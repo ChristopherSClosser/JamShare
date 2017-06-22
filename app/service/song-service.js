@@ -11,7 +11,7 @@ module.exports = [
     let service = {}
     service.songs = []
 
-    service.createsong = (song) => {
+    service.createSong = (song) => {
       $log.debug('service.createsong')
       return authService.getToken()
       .then(token => {
@@ -22,7 +22,7 @@ module.exports = [
             Authorization: `Bearer ${token}`
           }
         }
-        return $http.post(`${__API_URL__}api/song`, song, config)// eslint-disable-line
+        return $http.post(`${__API_URL__}/api/song`, song, config)// eslint-disable-line
       })
       .then(res => {
         $log.log('song created')
@@ -36,12 +36,12 @@ module.exports = [
       })
     }
 
-    service.deletesong = (songId) => {
+    service.deleteSong = (songId) => {
       $log.debug('#songService.deletesong')
 
       return authService.getToken()
       .then(token => {
-        let url = `${__API_URL__}api/song/${songId}/` // eslint-disable-line
+        let url = `${__API_URL__}/api/song/${songId}/` // eslint-disable-line
         let config = {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -64,8 +64,8 @@ module.exports = [
         })
     }
 
-    service.fetchsongs = () => {
-      $log.debug('#service.fetchsongs')
+    service.fetchSongs = () => {
+      $log.debug('#service.fetchSongs')
       return authService.getToken()
       .then(token => {
         let config = {
@@ -75,7 +75,7 @@ module.exports = [
             Authorization: `Bearer ${token}`
           }
         }
-        return $http.get(`${__API_URL__}api/song`, config) // eslint-disable-line
+        return $http.get(`${__API_URL__}/api/song`, config) // eslint-disable-line
       })
       .then(res => {
         $log.log('songs retrieved')
@@ -88,12 +88,14 @@ module.exports = [
       })
     }
 
-    service.updatesong = (songId, song) => {
+    service.updateSong = (songId, song) => {
       $log.debug()
+      console.log(this.songID);
 
       return authService.getToken()
       .then(token => {
-        let url = `${__API_URL__}api/song/${songId}` // eslint-disable-line
+        console.log('are we here?');
+        let url = `${__API_URL__}/api/song/${songId}` // eslint-disable-line
         let config = {
           headers: {
             Accept: 'application/json',
@@ -105,6 +107,7 @@ module.exports = [
       })
       .then(res => {
         service.songs.forEach((ele, idx) => {
+          console.log('the ele', ele);
           if(ele._id === res.data._id) service.songs[idx] = res.data
         })
         return res.data
