@@ -6,20 +6,20 @@ module.exports = {
   template: require('./element.html'),
   controllerAs: 'elementCtrl',
   bindings: {
-    elem: '<',
+    element: '<',
     song: '<',
   },
   controller: [
     '$log',
-    'elemService',
-    function($log, elemService) {
+    'elementService',
+    function($log, elementService) {
       this.$onInit = () => {
         $log.debug('elementCtrl');
 
         this.deletePic = () => {
-          $log.debug('#thumbnailCtrl.deleteElem');
+          $log.debug('#thumbnailCtrl.deleteelement');
 
-          elemService.deleteElem(this.song, this.elem);
+          elementService.deleteelement(this.song, this.element);
         };
       };
     },

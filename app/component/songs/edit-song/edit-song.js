@@ -6,16 +6,16 @@ module.exports = {
   template: require('./edit-song.html'),
   controllerAs: 'editSongCtrl',
   bindings: {
-    elem: '<',
+    element: '<',
     song: '<'
   },
-  controller: ['$q', '$log', 'elemService', 'songService', function($q, $log, elemService, songService) {
+  controller: ['$q', '$log', 'elementService', 'songService', function($q, $log, elementService, songService) {
     this.$onInit = () => {
       $log.debug('editSongCtrl')
 
-      this.deleteElem = function() {
-        $log.debug('editSongCtrl.deleteElem')
-        return elemService.deleteElem(this.song, this.elem)
+      this.deleteelement = function() {
+        $log.debug('editSongCtrl.deleteelement')
+        return elementService.deleteelement(this.song, this.element)
         .then(
           songService.fetchSongs,
           err => $log.error(err)

@@ -14,9 +14,14 @@ module.exports = [
     this.$onInit = () => {
       $log.debug('ProfileController')
 
+      console.log(profileService);
+
       profileService.currentUser()
-      .then(user => this.username = user)
-      console.log(this.username, 'user')
+      .then(user => {
+        console.log('scott was here', user)
+        this.username = user
+      })
+      .catch(err => console.error(err))
 
       if(!$window.localStorage.token) {
         authService.getToken()

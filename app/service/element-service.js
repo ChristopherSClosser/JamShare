@@ -7,16 +7,16 @@ module.exports = [
   'Upload',
   'authService',
   function($q, $log, $http, Upload, authService) {
-    $log.debug('Element Service');
+    $log.debug('element Service');
 
     let service = {};
 
-    service.uploadElem = function(song, elem) {
-      $log.debug('#elemService.uploadElem');
+    service.uploadelement = function(song, element) {
+      $log.debug('#elementService.uploadelement');
 
       return authService.getToken()
       .then(token => {
-        let url = `${__API_URL__}/api/song/${song._id}/elem`;// eslint-disable-line
+        let url = `${__API_URL__}/api/song/${song._id}/element`;// eslint-disable-line
         let headers = {
           Authorization: `Bearer ${token}`,
           Accept: 'application/json',
@@ -27,15 +27,15 @@ module.exports = [
           headers,
           method: 'POST',
           data: {
-            name: elem.name,
-            desc: elem.desc,
-            file: elem.file,
+            name: element.name,
+            desc: element.desc,
+            file: element.file,
           },
         });
       })
       .then(
         res => {
-          song.elems.push(res.data);
+          song.elements.push(res.data);
           return res.data;
         },
         err => {
@@ -45,12 +45,12 @@ module.exports = [
       );
     };
 
-    service.deleteElem = (song, elem) => {
-      $log.debug('#elemService.deleteElem');
+    service.deleteelement = (song, element) => {
+      $log.debug('#elementService.deleteelement');
 
       return authService.getToken()
       .then(token => {
-        let url = `${__API_URL__}/api/song/${song._id}/elem/${elem._id}`; // eslint-disable-line
+        let url = `${__API_URL__}/api/song/${song._id}/element/${element._id}`; // eslint-disable-line
         let config = {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -61,11 +61,11 @@ module.exports = [
       })
       .then(
         () => {
-          $log.log('deleted the elem');
+          $log.log('deleted the element');
 
-          for(let i = 0; i < song.elems.length; i++) {
-            if(song.elems[i]._id === elem._id) {
-              song.elems.splice(i, 1);
+          for(let i = 0; i < song.elements.length; i++) {
+            if(song.elements[i]._id === element._id) {
+              song.elements.splice(i, 1);
               break;
             }
           }
