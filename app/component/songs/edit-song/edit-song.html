@@ -1,0 +1,19 @@
+<section>
+  <form
+    name="editSongForm"
+    ng-submit="editSongCtrl.updateSong()"
+    novalidate>
+    <label for="title">title: </label>
+    <input name="title" type="text" ng-model="editSongCtrl.song.name"><br>
+    <label for="description">desc: </label>
+    <input name="description" type="text" ng-model="editSongCtrl.song.desc"><br>
+    <button class="edt-btn"
+      type="submit"
+      name="submit update"
+      >update</button>
+  </form>
+  <button class="edt-btn"
+    ng-click="editSongCtrl.deleteSong()"
+    >delete</button><br>
+  <thumbnail-container></thumbnail-container>
+</section>

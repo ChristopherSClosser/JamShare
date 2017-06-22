@@ -4,15 +4,17 @@ module.exports = [
   '$q',
   '$log',
   '$http',
+  '$window',
   'Upload',
   'authService',
-  function($q, $log, $http, Upload, authService) {
-    $log.debug('element Service');
+  function($q, $log, $http, $window, Upload, authService) {
+    $log.debug('Element Service');
 
     let service = {};
 
-    service.uploadelement = function(song, element) {
-      $log.debug('#elementService.uploadelement');
+
+    service.uploadElement = function(song, element) {
+      $log.debug('#elemService.uploadElem');
 
       return authService.getToken()
       .then(token => {
@@ -45,12 +47,12 @@ module.exports = [
       );
     };
 
-    service.deleteelement = (song, element) => {
-      $log.debug('#elementService.deleteelement');
+    service.deleteElement = (song, element) => {
+      $log.debug('#elemService.deleteElem');
 
       return authService.getToken()
       .then(token => {
-        let url = `${__API_URL__}/api/song/${song._id}/element/${element._id}`; // eslint-disable-line
+        let url = `${__API_URL__}/api/song/${song._id}/elem/${element._id}`; // eslint-disable-line
         let config = {
           headers: {
             Authorization: `Bearer ${token}`,

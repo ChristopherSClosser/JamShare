@@ -62,9 +62,9 @@ module.exports = [
       })
     }
 
+
     service.login = function(user) {
       $log.debug('authService.login()')
-
       let url = `${__API_URL__}/api/login`// eslint-disable-line
       let base64 = $window.btoa(`${user.username}:${user.password}`)
       let config = {
@@ -77,6 +77,7 @@ module.exports = [
       return $http.get(url, config)
       .then(res => {
         $log.log('success', res.data)
+
         return setToken(res.data)
       })
       .catch(err =>{

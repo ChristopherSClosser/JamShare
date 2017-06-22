@@ -14,11 +14,9 @@ module.exports = [
     this.$onInit = () => {
       $log.debug('ProfileController')
 
-      console.log(profileService);
 
       profileService.currentUser()
       .then(user => {
-        console.log('scott was here', user)
         this.username = user
       })
       .catch(err => console.error(err))

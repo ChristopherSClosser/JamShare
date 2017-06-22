@@ -16,10 +16,10 @@ module.exports = {
       this.$onInit = () => {
         $log.debug('elementCtrl');
 
-        this.deletePic = () => {
-          $log.debug('#thumbnailCtrl.deleteelement');
+        this.deleteElem = () => {
+          $log.debug('#thumbnailCtrl.deleteElem');
 
-          elementService.deleteelement(this.song, this.element);
+          elementService.deleteElem(this.song, this.element);
         };
       };
     },
