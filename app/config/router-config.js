@@ -2,8 +2,8 @@
 
 module.exports = ['$stateProvider','$urlServiceProvider',
   function($stateProvider, $urlServiceProvider) {
-    $urlServiceProvider.rules.when('', '/home')
-    $urlServiceProvider.rules.when('/', '/home')
+    $urlServiceProvider.rules.when('', '/signup')
+    $urlServiceProvider.rules.when('/', '/signup')
     $urlServiceProvider.rules.when('/signup', '/join#signup')
     $urlServiceProvider.rules.when('/login', '/join#login')
 
@@ -22,13 +22,13 @@ module.exports = ['$stateProvider','$urlServiceProvider',
       //   controller: 'SplashController',
       //   controllerAs: 'splashCtrl'
       // },
-      // {
-      //   name: 'home',
-      //   url: '/home',
-      //   template: require('../view/home/home.html'),
-      //   controller: 'HomeController',
-      //   controllerAs: 'homeCtrl'
-      // },
+      {
+        name: 'home',
+        url: '/home',
+        template: require('../view/home/home.html'),
+        controller: 'HomeController',
+        controllerAs: 'homeCtrl'
+      },
       {
         name: 'profile',
         url: '/profile',
