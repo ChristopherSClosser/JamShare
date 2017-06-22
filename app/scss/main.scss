@@ -1,9 +1,10 @@
+// @import url('./imgs');
+// @import '/imgs/Rocket.ttf=Rocket';
+
 html {
   text-align: center;
   margin: 0;
   padding: 0;
-}
-html, body, main {
   height: 100%;
 }
 
@@ -13,48 +14,21 @@ button {
   padding-top: 2%;
   padding-bottom: 2.5%;
 }
-
-ul {
-  list-style: none;
-  padding: inherit;
-  text-align: left;
-  margin-bottom: 5%;
+@font-face {
+  font-family: 'rocket';
+  src: url('../imgs/Rockit.ttf')
+}
+h1 {
+  font-family: "rocket";
 }
 
 section {
   display: inline-block;
 }
 
-body {
-  margin: auto;
-}
-
 h1 a {
   text-decoration: none;
   color: inherit;
-}
-
-div.background {
-  margin: auto;
-  background-color: #888;
-  position: absolute;
-  left: 8%;
-  right: 8%;
-  // top: 16%;
-  height: 200%;
-  // height: 100% !important;
-  // height: auto;
-  z-index: -999999999;
-}
-
-label {
-  font-family: monospace;
-}
-
-input {
-  margin: auto;
-  margin-top: 2%;
-  margin-bottom: 2%;
 }
 
 @media (min-width: 800px) {
@@ -71,3 +45,38 @@ input {
     width: 50%;
   }
 }
+// ul {
+//   list-style: none;
+//   padding: inherit;
+//   text-align: left;
+//   margin-bottom: 5%;
+// }
+
+//
+// body {
+//   margin: auto;
+// }
+
+//
+// div.background {
+//   margin: auto;
+//   background-color: #888;
+//   position: absolute;
+//   left: 8%;
+//   right: 8%;
+//   // top: 16%;
+//   height: 200%;
+//   // height: 100% !important;
+//   // height: auto;
+//   z-index: -999999999;
+// }
+//
+// label {
+//   font-family: monospace;
+// }
+//
+// input {
+//   margin: auto;
+//   margin-top: 2%;
+//   margin-bottom: 2%;
+// }
