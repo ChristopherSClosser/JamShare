@@ -15,13 +15,13 @@ module.exports = ['$stateProvider','$urlServiceProvider',
         controller: 'LandingController',
         controllerAs: 'landingCtrl'
       },
-      {
-        name: 'splash',
-        url: '/home',
-        template: require('../view/splash/splash.html'),
-        controller: 'SplashController',
-        controllerAs: 'splashCtrl'
-      },
+      // {
+      //   name: 'splash',
+      //   url: '/home',
+      //   template: require('../view/splash/splash.html'),
+      //   controller: 'SplashController',
+      //   controllerAs: 'splashCtrl'
+      // },
       // {
       //   name: 'home',
       //   url: '/home',
@@ -29,13 +29,13 @@ module.exports = ['$stateProvider','$urlServiceProvider',
       //   controller: 'HomeController',
       //   controllerAs: 'homeCtrl'
       // },
-      // {
-      //   name: 'profile',
-      //   url: '/profile',
-      //   template: require('../view/profile/profile.html'),
-      //   controller: 'ProfileController',
-      //   controllerAs: 'profileCtrl'
-      // }
+      {
+        name: 'profile',
+        url: '/profile',
+        template: require('../view/profile/profile.html'),
+        controller: 'ProfileController',
+        controllerAs: 'profileCtrl'
+      }
     ]
     routes.forEach($stateProvider.state)
   }

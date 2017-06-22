@@ -11,10 +11,10 @@ module.exports = {
     function($log, $location, $window, authService) {
       this.$onInit = () => {
         $log.debug('LoginController');
-        if($window.localStorage.token) {
+        if(!$window.localStorage.token) {
           authService.getToken()
           .then(
-            () => $location.url('/home'),
+            () => $location.url('/profile'),
             () => $location.url('/signup')
           );
         }
@@ -23,7 +23,7 @@ module.exports = {
           $log.log('loginCtrl.login()')
 
           authService.login(this.user)
-          .then(() => $location.url('/home'))
+          .then(() => $location.url('/profile'))
         };
       };
     }

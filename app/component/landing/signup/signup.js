@@ -3,14 +3,17 @@
 module.exports = {
   template: require('./signup.html'),
   controllerAs: 'signupCtrl',
-  controller: ['$log', '$location', '$window', '$rootScope', 'authService', 'songService',
+  controller: [
+    '$log',
+    '$location',
+    '$window', '$rootScope', 'authService', 'songService',
     function($log, $location, $window, $rootScope, authService, songService) {//eslint-disable-line
       this.$onInit = () => {
         $log.debug('SignupController')
         if(!$window.localStorage.token) {
           authService.getToken()
           .then(
-            () => $location.url('/home'),
+            () => $location.url('/profile'),
             () => $location.url('/signup')
           );
         }
@@ -20,7 +23,7 @@ module.exports = {
           $log.debug('signupCtrl.signup()')
 
           authService.signup(user)
-          .then(() => $location.url('/home'))
+          .then(() => $location.url('/profile'))
         }
       }
     }]
