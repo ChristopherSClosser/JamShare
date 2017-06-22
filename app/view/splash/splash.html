@@ -2,7 +2,8 @@
   <h2>{{ splashCtrl.title }}</h2>
   <profile></profile>
   <create-song>
-  </create-song><br>
+  </create-song>
+  <br>
   <element-container ng-if="splashCtrl.currentSong"  song="splashCtrl.currentSong"></element-container><br>
   <label for="song-selection">select the song you would<br>like to add elements to: </label>
   <select
@@ -16,3 +17,4 @@
         songs="splashCtrl.songs" song="item"></song-item>
     </div>
   </ul>
+</section>

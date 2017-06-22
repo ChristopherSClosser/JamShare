@@ -29,8 +29,10 @@ module.exports = [
         .then(songs => {
           this.songs = songs;
           this.currentSong = this.songs[0];
+          songService.currentSong = this.currentSong; // Scott is hacking this 
           this.user = this.currentSong.username;
-          $window.localStorage.setItem('currentSong', this.currentSong._id)
+          // $window.localStorage.setItem('currentSong', this.currentSong._id)
+          console.log('muh muh songs', this.songs);
           console.log('currentsong', this.currentSong);
         },
         err => $log.error(err)
@@ -38,7 +40,7 @@ module.exports = [
       }
 
       $rootScope.$on('locationChangeSuccess', this.fetchSongs)
-      $rootScope.$on('newSongCreated', this.fetchSongs)//need to add show upoad pic controller
+      $rootScope.$on('newSongCreated', this.fetchSongs)
       $rootScope.$on('updateCurrentSong', (eve, songId) => {
         for(let i = 0; this.songs.length; i++) {
           if(this.songs[i]._id === songId) {

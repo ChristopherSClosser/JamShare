@@ -9,17 +9,19 @@ module.exports = {
     song: '<'
   },
   controller: [
-    '$log', 'elementService', function($log, elementService) {
+    '$log', 'songService', 'elementService', function($log, songService, elementService) {
       this.$onInit = () => {
         $log.debug('uploadElementController initialized')
         this.element = {}
 
         this.uploadElement = () => {
-          console.log('here again', this.song);
+          // $rootScope.$emit('updateCurrentSong', )
+          console.log('here again', songService.currentSong);
 
-          elementService.uploadElement(this.song, this.element)
+          elementService.uploadElement(songService.currentSong, this.element)
           .then(() => {
-            console.log('the element', this.song);
+            console.log('the song', this.song);
+            console.log('the element', this.element);
             this.element.name = null
             this.element.desc = null
             this.element.file = null
