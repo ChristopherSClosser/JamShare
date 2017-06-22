@@ -1,23 +1,23 @@
 <section>
-  <div class="join-container"
+ <div class="join-container"
     ng-if="landingCtrl.showSignup">
+    <signup></signup>
     <div class="join-inner">
-      <signup></signup>
-       <a href="/#!/login"
+       <button href="/#!/login"
         ng-click="landingCtrl.showSignup=false">
         sign in
-      </a>
+      </button>
     </div>
   </div>
 
   <div class="join-container"
-    ng-if="!landingCtrl.showSignup">
+  ng-if="!landingCtrl.showSignup">
     <div class="join-inner">
       <login></login>
-      <a href="/#!/signup"
+      <button href="/#!/signup"
         ng-click="landingCtrl.showSignup=true">
         signup
-      </a>
+      </button>
     </div>
   </div>
 </section>
