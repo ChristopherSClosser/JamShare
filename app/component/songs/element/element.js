@@ -6,7 +6,7 @@ module.exports = {
   template: require('./element.html'),
   controllerAs: 'elementCtrl',
   bindings: {
-    elem: '<',
+    element: '<',
     song: '<',
   },
   controller: [
@@ -19,7 +19,7 @@ module.exports = {
         this.deleteElem = () => {
           $log.debug('#thumbnailCtrl.deleteElem');
 
-          elementService.deleteElem(this.song, this.elem);
+          elementService.deleteElem(this.song, this.element);
         };
       };
     },
