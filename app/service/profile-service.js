@@ -10,19 +10,21 @@ module.exports = [
     $log.debug('profileService')
 
     let service = {}
-    let token = null
 
     service.currentUser = function() {
 
-      let url = `${__API_URL__}/api/profile`// eslint-disable-line
-      let config = {
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json',
-          Authorization: `Bearer ${token}`
+      return authService.getToken()
+      .then(token => {
+        // let url = `${__API_URL__}/api/profile`// eslint-disable-line
+        let config = {
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json',
+            Authorization: `Bearer ${token}`
+          }
         }
-      }
-      return $http.get(url, config)
+        return $http.get(`${__API_URL__}/api/profile`, config)//eslint-disable-line
+      })
       .then(res => {
         $log.log('success', res.data)
         let user = res.data

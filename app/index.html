@@ -9,12 +9,12 @@
     <header>
       <h1 class="title">JamShare</h1>
       <navbar>
-        <button class="signup" onclick="signupCtrl.showSignup()">signup</button>
       </navbar>
+      <a href="#!/signup" ng-show="splashCtrl" class="button">signup</a>
       <!-- <login></login> -->
       <!-- <signup></signup> -->
-
-
+      <profile></profile>
+      <a href="#!/profile" ng-click="profileCtrl.currentUser()" class="button">profile</a>
     </header>
     <main>
       <ui-view></ui-view>
