@@ -17,19 +17,16 @@ context.keys().forEach(path => jamShare.config(context(path)))
 
 context = require.context('./view/', true, /\.js$/)
 context.keys().forEach(key => {
-  // console.log('key', key)
 
   jamShare.controller(pascalcase(path.basename(key, '.js')), context(key) )
 })
 
 context = require.context('./service/', true, /\.js$/)
 context.keys().forEach(key => {
-  console.log('key', key)
   jamShare.service(camelcase(path.basename(key, '.js')), context(key))
 })
 
 context = require.context('./component/', true, /\.js$/)
 context.keys().forEach(key => {
-  // console.log('key', key)
   jamShare.component(camelcase(path.basename(key, '.js')), context(key))
 })

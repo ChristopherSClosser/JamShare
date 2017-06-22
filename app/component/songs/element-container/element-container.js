@@ -11,7 +11,6 @@ module.exports = {
   controller: ['$log', '$rootScope', 'songService', function($log, $rootScope, songService){
     this.$onInit = () => {
       $log.debug('Element Container Controller');
-      console.log('elementContainer Song', this.song);
     }
   }]
 }

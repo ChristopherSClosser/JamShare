@@ -14,10 +14,8 @@ module.exports = {
         return songService.createSong(this.song)
         .then(() => {
           let res = this.song;
-          console.log('before res', res);
           this.song.name = null;
           this.song.desc = null;
-          console.log('after res', this.song);
           return res;
         })
         .catch(err => $log.error(err))

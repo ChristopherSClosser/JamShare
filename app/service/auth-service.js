@@ -62,17 +62,14 @@ module.exports = [
       })
     }
 
-    // service.currentUser = function(user) {
-    // }
 
     service.login = function(user) {
       $log.debug('authService.login()')
-      console.log('the user', user);
       let url = `${__API_URL__}/api/login`// eslint-disable-line
       let base64 = $window.btoa(`${user.username}:${user.password}`)
       let config = {
         headers: {
-          Accept: 'application/json',
+          'Accept': 'application/json',
           Authorization: `Basic ${base64}`
         }
       }

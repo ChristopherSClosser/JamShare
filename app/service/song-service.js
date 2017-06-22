@@ -90,11 +90,8 @@ module.exports = [
 
     service.updateSong = (songId, song) => {
       $log.debug()
-      console.log(this.songID);
-
       return authService.getToken()
       .then(token => {
-        console.log('are we here?');
         let url = `${__API_URL__}/api/song/${songId}` // eslint-disable-line
         let config = {
           headers: {
@@ -107,10 +104,8 @@ module.exports = [
       })
       .then(res => {
         service.songs.forEach((ele, idx) => {
-          console.log('the ele', ele);
           if(ele._id === res.data._id) service.songs[idx] = res.data
         })
-        console.log('muh data', res.data);
         return res.data
       })
       .catch(err => {

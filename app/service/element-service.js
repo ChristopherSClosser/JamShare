@@ -15,14 +15,10 @@ module.exports = [
 
     service.uploadElement = function(song, element) {
       $log.debug('#elemService.uploadElem');
-      // this.song = '594ac8b90395ad001c7795e0'
-      console.log('the song', song);
-      console.log('the song 2', this.song);
 
       return authService.getToken()
       .then(token => {
         let url = `${__API_URL__}/api/song/${song._id}/element`;// eslint-disable-line
-        console.log('HEEEEERRE!', url);
         let headers = {
           Authorization: `Bearer ${token}`,
           Accept: 'application/json',
@@ -67,7 +63,7 @@ module.exports = [
       })
       .then(
         () => {
-          $log.log('deleted the elem');
+          $log.log('deleted the element');
 
           for(let i = 0; i < song.elements.length; i++) {
             if(song.elements[i]._id === element._id) {

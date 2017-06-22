@@ -29,11 +29,9 @@ module.exports = [
         .then(songs => {
           this.songs = songs;
           this.currentSong = this.songs[0];
-          songService.currentSong = this.currentSong; // Scott is hacking this 
+          songService.currentSong = this.currentSong;
           this.user = this.currentSong.username;
-          // $window.localStorage.setItem('currentSong', this.currentSong._id)
-          console.log('muh muh songs', this.songs);
-          console.log('currentsong', this.currentSong);
+
         },
         err => $log.error(err)
         )
@@ -45,7 +43,6 @@ module.exports = [
         for(let i = 0; this.songs.length; i++) {
           if(this.songs[i]._id === songId) {
             this.currentSong = this.songs[i]
-            console.log('muh song', this.song);
             break;
           }
         }
