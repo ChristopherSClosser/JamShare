@@ -10,23 +10,15 @@ h1 {
   text-align: center;
   color: #911A1F;
 }
-.title-background {
-  position:absolute;
-  position:absolute;
-  top:0px;
-  left:0px;
-  width:100%;
-  height:100%;
-  z-index:-1;
-}
+
 .title {
   position: relative;
-  height: 200px;
+  height: 100px;
 }
 input {
   border-radius: 10px;
 }
 html {
   background-color: #0F0F0F;
-  z-index: -5;
+  z-index: -160;
 }
