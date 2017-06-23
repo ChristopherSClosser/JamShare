@@ -15,11 +15,10 @@ module.exports = [
 
       return authService.getToken()
       .then(token => {
-        // let url = `${__API_URL__}/api/profile`// eslint-disable-line
         let config = {
           headers: {
+            Accept: 'application/json',
             'Content-Type': 'application/json',
-            'Accept': 'application/json',
             Authorization: `Bearer ${token}`
           }
         }

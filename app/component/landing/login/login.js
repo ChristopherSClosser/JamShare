@@ -7,10 +7,14 @@ module.exports = {
     '$log',
     '$location',
     '$window',
+    '$rootScope',
     'authService',
-    function($log, $location, $window, authService) {
+    function($log, $location, $window, $rootScope, authService) {
       this.$onInit = () => {
         $log.debug('LoginController');
+
+        this.title = 'Sign In'
+
         if(!$window.localStorage.token) {
           authService.getToken()
           .then(

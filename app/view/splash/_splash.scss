@@ -2,12 +2,15 @@
   margin: 5%;
 }
 .splash-content {
-  background-color: #888;
+  background-color: #C0BDA5;
   width: 84%;
+  opacity: .6;
+  z-index: 2;
+  text-align: center;
 }
 
 @media (min-width: 960px) {
-  .home-content {
+  .splash-content {
     width: 50%;
   }
 }
