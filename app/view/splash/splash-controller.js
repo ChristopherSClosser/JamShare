@@ -21,7 +21,7 @@ module.exports = [
         // console.log('elements', allSongs[4].elements[0]);
 
         // console.log('root', $rootScope.allSongs);
-        // console.log('flerg', allSongs);
+        console.log('flerg', allSongs);
         return allSongs
       })
     }
