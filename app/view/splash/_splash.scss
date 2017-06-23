@@ -1,8 +1,6 @@
-.song-item {
-  margin: 5%;
-}
 .splash-content {
-  background-color: #911A1F;
+  background-color: black;
+  color: white;
   width: 84%;
   opacity: .6;
   z-index: 2;
@@ -11,24 +9,19 @@
   width: 60%;
 }
 .splash-background {
+  z-index:-7;
   position:absolute;
   top:0px;
   left:0px;
   width:100%;
   height:100%;
-  z-index:-7;
 }
-.create-song {
-  background-color: #911A1F;
-  width: 84%;
-  opacity: .6;
-  z-index: 2;
-  text-align: center;
-  margin: 0 auto;
-  width: 60%;
+.dummytracks {
+  list-style-type: none;
+
 }
-// @media (min-width: 960px) {
-//   .splash-content {
-//     width: 50%;
-//   }
-// }
+.dummy-scroll {
+  background-color: black;
+  color: white;
+  
+}
