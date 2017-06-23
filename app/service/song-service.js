@@ -10,6 +10,7 @@ module.exports = [
 
     let service = {}
     service.songs = []
+    service.allSongs = []
 
     service.createSong = (song) => {
       $log.debug('service.createsong')
@@ -58,27 +59,26 @@ module.exports = [
         })
         return res.status
       })
-        .catch(err => {
-          $log.error(err.message)
-          return $q.reject(err)
-        })
+      .catch(err => {
+        $log.error(err.message)
+        return $q.reject(err)
+      })
     }
 
-    service.fetchAllSongs = () => {
-      $log.debug('service.fetchAllSongs');
-      return songService.fetchAllSongs()
-      .then(songs => {
-        return $http.get(`${__API_URL__}/api/public/song`)
-      })
+    service.fetchAllSongs =() => {
+      $log.debug('fetchAllSongs')
+      return $http.get(`${__API_URL__}/api/public/songs`)
       .then(res => {
-        $log.log('all songs retrieved')
-        service.songs = res.data
+        console.log('the res data', res.data);
+        // allSongs.push(res.data)
+        service.allSongs = res.data
+        console.log('service songs', service.allSongs[0].name);
         return res.data
       })
       .catch(err => {
-        $log.console.error(err.message)
-        $q.reject(err);
-      });
+        $log.error(err.message)
+        $q.reject(err)
+      })
     }
 
     service.fetchSongs = () => {
