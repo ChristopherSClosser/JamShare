@@ -1,40 +1,33 @@
 <section>
-  <img class="title-background" ng-src="http://wallpapercave.com/wp/2ssfPNS.jpg">
 
+  <img class="title-background" ng-src="http://wallpapercave.com/wp/2ssfPNS.jpg">
 
   <div class="blurb">
     <p>JamShare is an open-source, music-sharing platform designed to allow musicians to share individual components of their music, (like a guitar riff or a drum solo), and connect with other artists who are looking for a similar piece to add to their own jam.</p>
   </div>
 
-  <div class="sign-up"
-    ng-if="landingCtrl.showSignup">
-      <signup></signup>
-      <button type="submit" value="Sign Up"> Sign Up</button>
-  </div>
-
   <div class="sign-in"
-  ng-if="!landingCtrl.showSignup">
-  <login></login>
-</div>
+      ng-if="!landingCtrl.showSignup">
+      <div class="members">
+        <login></login>
+        <p>Want to Join?</p>
+        <button><a href="/#!/signup"
+          ng-click="landingCtrl.showSignup=true">
+          sign up
+        </a></button>
+      </div>
+    </div>
 
-  <div class="members">
-    <p>For Members Only</p>
-    <button class="toggle-button">
-      <a href="/#!/login"
-      ng-if="landingCtrl.showSignup=true">
-      Sign In
-    </a>
-    </button>
-  </div>
-
+<div class="sign-up"
+    ng-if="landingCtrl.showSignup">
     <div class="members">
-      <p>Not a member? Leave this page</p>
-      <button name="toggle-button">
-        <a href="/#!/signup"
-        ng-if="landingCtrl.showSignup=false">
-        signup
-      </a>
-    </button>
-</div>
+      <signup></signup>
+      <p>Already a Member?</p>
+      <button><a href="/#!/login"
+        ng-click="landingCtrl.showSignup=false">
+        sign in
+      </a></button>
+    </div>
+  </div>
 
 </section>
