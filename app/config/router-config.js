@@ -22,13 +22,6 @@ module.exports = ['$stateProvider','$urlServiceProvider',
         controller: 'SplashController',
         controllerAs: 'splashCtrl'
       },
-      // {
-      //   name: 'home',
-      //   url: '/home',
-      //   template: require('../view/home/home.html'),
-      //   controller: 'HomeController',
-      //   controllerAs: 'homeCtrl'
-      // },
       {
         name: 'profile',
         url: '/profile',
