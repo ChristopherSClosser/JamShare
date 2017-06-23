@@ -4,8 +4,9 @@ module.exports = [
   '$q',
   '$log',
   '$http',
+  '$rootScope',
   'authService',
-  function($q, $log, $http, authService) {
+  function($q, $log, $http, $rootScope, authService) {
     $log.debug('song Service')
 
     let service = {}
@@ -69,10 +70,11 @@ module.exports = [
       $log.debug('fetchAllSongs')
       return $http.get(`${__API_URL__}/api/public/songs`)
       .then(res => {
-        console.log('the res data', res.data);
+        // console.log('the res data', res.data);
         // allSongs.push(res.data)
         service.allSongs = res.data
-        console.log('service songs', service.allSongs[0].name);
+        // console.log('rootscope', service.allSongs);
+        // console.log('service songs', service.allSongs[0].name);
         return res.data
       })
       .catch(err => {
