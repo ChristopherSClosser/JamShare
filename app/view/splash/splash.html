@@ -2,17 +2,18 @@
 <h2>Home Page</h2>
 <!-- <audio src="https://jamshare-api.s3.amazonaws.com/4920ab6817f9b44dcde9de8aedaba773.mp3" controls></audio> -->
 <div>
-  <navbar></navbar>
+  <!-- <navbar></navbar> -->
   <a href="#!/profile" ng-click="profileCtrl.currentUser()" class="button"><button>profile</button></a>
 </div>
 <div>
-  <!-- <song-item
+  <song-item
   uib-accordian-group class="panel-default"
-  ng-repeat="item in splashCtrl.allSongs"
-  allSongs="splashCtrl.allSongs"
+  ng-repeat="item in splashCtrl.allTheSongs"
+  allSongs="splashCtrl.allTheSongs"
   song="item">
-</song-item> -->
-  <ul class="dummytracks">
+  </song-item>
+</div>
+  <!-- <ul class="dummytracks">
     <li>Username: RandyRandy</li>
     <li>Title: RandyJams</li>
     <li>Desc: Drum Tracks</li>

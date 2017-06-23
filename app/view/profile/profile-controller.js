@@ -22,6 +22,7 @@ module.exports = [
         )
       }
       this.songs = []
+      this.allTheSongs = []
 
       this.fetchSongs = () => {
         $log.log(songService)
@@ -48,6 +49,16 @@ module.exports = [
         }
       })
       this.fetchSongs();
+
+      return songService.fetchAllSongs()
+      .then(allSongs => {
+        this.allTheSongs = allSongs
+        console.log('elements', allSongs[4].elements[0]);
+
+        console.log('root', $rootScope.allSongs);
+        console.log('flerg', allSongs);
+        return allSongs
+      })
     }
   }
 ]
