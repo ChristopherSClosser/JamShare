@@ -11,8 +11,7 @@ module.exports = [
     this.$onInit = () => {
       let url = $location.url()
       $log.log('url', url)
-      this.showSignup = url === '/join#signup'
-      this.showSignin = url === '/join'
+      this.showSignup = url === '/join#signup' || url === '/join'
     }
   }
 ]
