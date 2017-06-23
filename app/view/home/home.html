@@ -1,0 +1,28 @@
+<!-- <section class="home-content">
+  <h2>{{ homeCtrl.title }}</h2>
+  <create-song>
+  </create-song><br>
+  <element-container ng-if="homeCtrl.currentSong"  song="homeCtrl.currentSong"></element-container><br>
+  <label for="song-selection">select the song you would<br>like to add elements to: </label>
+  <select
+  name="song-selection"
+  ng-options="item as item.title for item in homeCtrl.songs track by item._id"
+  ng-model="homeCtrl.currentSong"></select><hr>
+  <ul class="song-item">
+    <div>
+      <uib-accordian>
+        <song-item uib-accordian-group class="panel-default" ng-repeat="item in homeCtrl.songs"
+        currentSong="homeCtrl.currentSong"
+        songs="homeCtrl.songs" song="item"></song-item>
+      <uib-accordian>
+    </div>
+  </ul>
+</section> -->
+<h2>Fuckin Shit</h2>
+<audio src="https://jamshare-api.s3.amazonaws.com/4920ab6817f9b44dcde9de8aedaba773.mp3" controls>
+</audio>
+<div>
+<navbar></navbar>
+<a href="#!/profile" ng-click="profileCtrl.currentUser()" class="button"><button>profile</button></a>
+
+</div>

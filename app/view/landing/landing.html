@@ -1,4 +1,25 @@
 <section>
+ <div class="join-container"
+    ng-if="landingCtrl.showSignup">
+    <signup></signup>
+    <div class="join-inner">
+       <button href="/#!/login"
+        ng-click="landingCtrl.showSignup=false">
+        sign in
+      </button>
+    </div>
+  </div>
+
+  <div class="join-container"
+  ng-if="!landingCtrl.showSignup">
+    <div class="join-inner">
+      <login></login>
+      <button href="/#!/signup"
+        ng-click="landingCtrl.showSignup=true">
+        signup
+      </button>
+    </div>
+  </div>
 
   <div class="blurb">
     <p></p>
