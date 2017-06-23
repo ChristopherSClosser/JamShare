@@ -15,13 +15,13 @@ module.exports = ['$stateProvider','$urlServiceProvider',
         controller: 'LandingController',
         controllerAs: 'landingCtrl'
       },
-      {
-        name: 'home',
-        url: '/home',
-        template: require('../view/home/home.html'),
-        controller: 'HomeController',
-        controllerAs: 'homeCtrl'
-      },
+      // {
+      //   name: 'home',
+      //   url: '/home',
+      //   template: require('../view/home/home.html'),
+      //   controller: 'HomeController',
+      //   controllerAs: 'homeCtrl'
+      // },
       {
         name: 'splash',
         url: '/home',

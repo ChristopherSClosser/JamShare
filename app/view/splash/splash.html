@@ -1,26 +1,35 @@
-<!-- <div class="create-song"> -->
-<section class="splash-content">
-  <h2>{{ splashCtrl.title }}</h2>
-
-  <img class="splash-background" ng-src="https://static1.squarespace.com/static/56f1f8fe8a65e2db95a60e3f/t/56f213b8f699bbd885a22042/1458705347401/5864713122_72a8381983_b.jpg?format=2500w">
-
-  <!-- <navbar></navbar> -->
-
-  <create-song class="create-song">
-  </create-song>
-
-  <element-container ng-if="splashCtrl.currentSong"  song="splashCtrl.currentSong"></element-container><br>
-  <label for="song-selection">select the song you would<br>like to add elements to: </label>
-  <select
-  name="song-selection"
-  ng-options="item as item.name for item in splashCtrl.songs track by item._id"
-  ng-model="splashCtrl.currentSong"></select><hr>
-  <ul class="song-item">
-    <div>
-        <song-item uib-accordian-group class="panel-default" ng-repeat="item in splashCtrl.songs"
-        currentSong="splashCtrl.currentSong"
-        songs="splashCtrl.songs" song="item"></song-item>
-    </div>
+<h2>Home Page</h2>
+   <img class="splash-background" ng-src="https://static1.squarespace.com/static/56f1f8fe8a65e2db95a60e3f/t/56f213b8f699bbd885a22042/1458705347401/5864713122_72a8381983_b.jpg?format=2500w">
+<!-- <audio src="https://jamshare-api.s3.amazonaws.com/4920ab6817f9b44dcde9de8aedaba773.mp3" controls></audio> -->
+<div>
+  <navbar></navbar>
+  <a href="#!/profile" ng-click="profileCtrl.currentUser()" class="button"><button>profile</button></a>
+</div>
+<div>
+  <!-- <song-item
+  uib-accordian-group class="panel-default"
+  ng-repeat="item in splashCtrl.allSongs"
+  allSongs="splashCtrl.allSongs"
+  song="item">
+</song-item> -->
+  <ul class="dummytracks">
+    <li>Username: RandyRandy</li>
+    <li>Title: RandyJams</li>
+    <li>Desc: Drum Tracks</li>
+    <audio src="https://jamshare-api.s3.amazonaws.com/a469722e95eab6b54818f6e05f7ed513.mp3" controls></audio>
   </ul>
-</section>
-<!-- </div> -->
+  <ul>
+    <li>Username: CrazyEddie</li>
+    <li>Title: Edriffs</li>
+    <li>Desc: Sick Guitar</li>
+    <audio src="https://jamshare-api.s3.amazonaws.com/d9cc606f82f99bc19d512f979f49f4ce.mp3" controls></audio>
+    <li><audio src="https://jamshare-api.s3.amazonaws.com/472aa7ab3044b0d95358d02ca35b4454.mp3" controls></audio></li>
+  </ul>
+  <ul>
+    <li>Username: Wild</li>
+    <li>Title: BettyBops</li>
+    <li>Desc: Piano Woman</li>
+    <audio src="https://jamshare-api.s3.amazonaws.com/30f78f59b07cdd3d0ec6c15fa8fc1bc7.mp3" controls></audio>
+  </ul>
+</div>
+
