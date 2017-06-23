@@ -1,21 +1,23 @@
-<section class="profile">
+<section class="profile-content">
+  <h2>{{ profileCtrl.title }}</h2>
+  <navbar></navbar>
+  <a href="#!/home" ng-click="homeCtrl.currentUser()" class="button"><button>home</button></a>
 
-  <h2>{{ profileCtrl.username }}</h2>
-
-  <div class="song-list">
-    <h3>Your Songs</h3>
-    <select
-      name="song selection"
-      ng-options="item as item.name for item in homeCtrl.songs track by item._id"
-      ng-model="homeCtrl.currentSong">
-    </select>
-  </div>
-
-  <div class="create-song">
-    <create-song></create-song>
-  </div>
-
-  <div class="song-item">
-    <song-item ng-repeat="item in homeCtrl.songs" songs="item"</song-item>
-  </div>
+  <!-- <profile></profile> -->
+  <create-song>
+  </create-song>
+  <br>
+  <element-container ng-if="profileCtrl.currentSong"  song="profileCtrl.currentSong"></element-container><br>
+  <label for="song-selection">select the song you would<br>like to add elements to: </label>
+  <select
+  name="song-selection"
+  ng-options="item as item.name for item in profileCtrl.songs track by item._id"
+  ng-model="profileCtrl.currentSong"></select><hr>
+  <ul class="song-item">
+    <div>
+        <song-item uib-accordian-group class="panel-default" ng-repeat="item in profileCtrl.songs"
+        currentSong="profileCtrl.currentSong"
+        songs="profileCtrl.songs" song="item"></song-item>
+    </div>
+  </ul>
 </section>

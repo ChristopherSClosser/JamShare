@@ -2,8 +2,8 @@
 
 module.exports = ['$stateProvider','$urlServiceProvider',
   function($stateProvider, $urlServiceProvider) {
-    $urlServiceProvider.rules.when('', '/home')
-    $urlServiceProvider.rules.when('/', '/home')
+    $urlServiceProvider.rules.when('', '/signup')
+    $urlServiceProvider.rules.when('/', '/signup')
     $urlServiceProvider.rules.when('/signup', '/join#signup')
     $urlServiceProvider.rules.when('/login', '/join#login')
 
@@ -15,27 +15,27 @@ module.exports = ['$stateProvider','$urlServiceProvider',
         controller: 'LandingController',
         controllerAs: 'landingCtrl'
       },
-      {
-        name: 'splash',
-        url: '/home',
-        template: require('../view/splash/splash.html'),
-        controller: 'SplashController',
-        controllerAs: 'splashCtrl'
-      },
       // {
-      //   name: 'home',
+      //   name: 'splash',
       //   url: '/home',
-      //   template: require('../view/home/home.html'),
-      //   controller: 'HomeController',
-      //   controllerAs: 'homeCtrl'
+      //   template: require('../view/splash/splash.html'),
+      //   controller: 'SplashController',
+      //   controllerAs: 'splashCtrl'
       // },
-      // {
-      //   name: 'profile',
-      //   url: '/profile',
-      //   template: require('../view/profile/profile.html'),
-      //   controller: 'ProfileController',
-      //   controllerAs: 'profileCtrl'
-      // }
+      {
+        name: 'home',
+        url: '/home',
+        template: require('../view/home/home.html'),
+        controller: 'HomeController',
+        controllerAs: 'homeCtrl'
+      },
+      {
+        name: 'profile',
+        url: '/profile',
+        template: require('../view/profile/profile.html'),
+        controller: 'ProfileController',
+        controllerAs: 'profileCtrl'
+      }
     ]
     routes.forEach($stateProvider.state)
   }

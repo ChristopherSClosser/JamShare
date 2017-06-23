@@ -64,6 +64,23 @@ module.exports = [
         })
     }
 
+    service.fetchAllSongs = () => {
+      $log.debug('service.fetchAllSongs');
+      return songService.fetchAllSongs()
+      .then(songs => {
+        return $http.get(`${__API_URL__}/api/public/song`)
+      })
+      .then(res => {
+        $log.log('all songs retrieved')
+        service.songs = res.data
+        return res.data
+      })
+      .catch(err => {
+        $log.console.error(err.message)
+        $q.reject(err);
+      });
+    }
+
     service.fetchSongs = () => {
       $log.debug('#service.fetchSongs')
       return authService.getToken()
