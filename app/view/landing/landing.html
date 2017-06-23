@@ -20,4 +20,40 @@
       </button>
     </div>
   </div>
+
+  <div class="blurb">
+    <p></p>
+  </div>
+
+  <div class="sign-up"
+    ng-if="landingCtrl.showSignup">
+      <signup></signup>
+      <button type="submit" value="Sign Up"> Sign Up</button>
+  </div>
+
+  <div class="sign-in"
+  ng-if="!landingCtrl.showSignup">
+  <login></login>
+</div>
+
+  <div class="members">
+    <p>For Members Only</p>
+    <button class="toggle-button">
+      <a href="/#!/login"
+      ng-if="landingCtrl.showSignup=true">
+      Sign In
+    </a>
+    </button>
+  </div>
+
+    <div class="members">
+      <p>Not a member? Leave this page</p>
+      <button name="toggle-button">
+        <a href="/#!/signup"
+        ng-if="landingCtrl.showSignup=false">
+        signup
+      </a>
+    </button>
+</div>
+
 </section>
