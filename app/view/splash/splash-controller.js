@@ -10,6 +10,7 @@ module.exports = [
   'songService',
   function($log, $location, $rootScope, songService) {// eslint-disable-line
     this.$onInit = () => {
+      this.title = 'Home'
       let url = $location.url()
       $log.log('url', url)
       this.showSignup = url === '/home' || url === '/home'

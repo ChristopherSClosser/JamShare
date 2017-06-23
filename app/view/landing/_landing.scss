@@ -2,7 +2,11 @@
   font-family: ‘Rubik’, sans-serif;
   z-index: 2;
   color:  white;
-  text-outline: 2px 2px 0px black;
+  text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
   width: 50%;
   text-align: center;
   margin: 0 auto;
@@ -22,12 +26,13 @@
 }
 
 .sign-up {
+  text-align: center;
   background-color: #C0BDA5;
   opacity: .9;
-  text-align: center;
   margin: 0 auto;
   width: 33%;
   height: 60%;
+  border-radius: 4px;
 }
 
 .sign-in {
@@ -37,6 +42,7 @@
   margin: 0 auto;
   width: 33%;
   height: 60%;
+  border-radius: 4px;
 }
 
 .toggle-button {
@@ -58,6 +64,5 @@ a:visited {
   background-color: #C0BDA5;
   opacity: .9;
   width: 25%;
-  margin: 0 auto;
-  margin-top: 2%;
+  margin: auto;
 }

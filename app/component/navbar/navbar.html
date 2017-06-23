@@ -1,9 +1,12 @@
 <section class="navbar">
 
-    <!-- <nav> -->
+    <!-- <input type="click" ng-model="profile"> -->
       <div class="logout">
         <button class="btn-std" ng-click="navbarCtrl.logout()">logout</button>
-        <!-- <a href="#!/home" ng-click="homeCtrl.currentUser()" class="button"><button>home</button></a> -->
+
+        <a href="#!/profile" ng-hide="profile" ng-click="profileCtrl.currentUser()" class="button"><button>profile</button></a>
+
+        <a href="#!/home" ng-hide="home" ng-click="homeCtrl.currentUser()" class="button"><button>home</button></a>
         <!-- <button href="#!/profile" ng-click="profileCtrl.currentUser()" class="button">profile</button> -->
       </div>
       <!-- <div>
