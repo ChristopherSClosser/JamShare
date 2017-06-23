@@ -16,6 +16,7 @@ module.exports = {
           let res = this.song;
           this.song.name = null;
           this.song.desc = null;
+    
           return res;
         })
         .catch(err => $log.error(err))

@@ -7,6 +7,7 @@ module.exports = {
   controllerAs: 'songItemCtrl',
   bindings: {
     song: '<',
+
   },
   controller: ['$log', '$rootScope', 'songService', function($log, $rootScope, songService){
     this.$onInit = () => {
