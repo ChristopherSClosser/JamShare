@@ -1,7 +1,7 @@
 .profile-content {
-  background-color: #911A1F;
+  background-color: black;
   width: 84%;
-  opacity: .9;
+  // opacity: .9;
   z-index: 2;
   text-align: center;
   margin: 0 auto;
@@ -17,7 +17,8 @@
   // opacity: .6;
 }
 .create-song {
-  background-color: #911A1F;
+  background-color: black;
+  color: white;
   width: 84%;
   // opacity: .2;
   z-index: 2;
@@ -26,8 +27,7 @@
   width: 60%;
 }
 
-// @media (min-width: 960px) {
-//   .splash-content {
-//     width: 50%;
-//   }
-// }
+.song-selection {
+  background-color: black;
+  color: white;
+}

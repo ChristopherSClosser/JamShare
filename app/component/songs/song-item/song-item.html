@@ -1,6 +1,6 @@
 <section class="created">
 
-<li uib-accordian-group heading="{{ songItemCtrl.song.name | uppercase }}">
+<div uib-accordian-group heading="{{ songItemCtrl.song.name | uppercase }}">
   <h4>created: {{ songItemCtrl.song.created | date }}</h4>
   <div class="song" ng-if="!songItemCtrl.showEditSong">
     <ul>
@@ -13,5 +13,5 @@
   <a ng-click="butn = !butn">
     <button ng-show="!butn" ng-click="songItemCtrl.showEditSong = !songItemCtrl.showEditSong">edit</button>
   </a><hr>
-</li>
+</div>
 </section>
