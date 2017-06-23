@@ -1,17 +1,17 @@
-
+<!--
 <h2>Home Page</h2>
-<audio src="https://jamshare-api.s3.amazonaws.com/4920ab6817f9b44dcde9de8aedaba773.mp3" controls>
-</audio>
+<audio src="https://jamshare-api.s3.amazonaws.com/4920ab6817f9b44dcde9de8aedaba773.mp3" controls></audio> 
 <div>
-<navbar></navbar>
-<a href="#!/profile" ng-click="profileCtrl.currentUser()" class="button"><button>profile</button></a>
-
+  <navbar></navbar>
+  <a href="#!/profile" ng-click="profileCtrl.currentUser()" class="button"><button>profile</button></a>
 </div>
-
-<ul class="song-item">
-  <div>
-      <song-item uib-accordian-group class="panel-default" ng-repeat="item in homeCtrl.allSongs"
-      allSongs="homeCtrl.allSongs" song="item"></song-item>
-  </div>
-</ul>
-</div>
+<div>
+  <ul class="song-item">
+    <song-item
+      uib-accordian-group class="panel-default"
+      ng-repeat="item in homeCtrl.allSongs"
+      allSongs="homeCtrl.allSongs"
+      song="item">
+    </song-item>
+  </ul>
+</div> -->

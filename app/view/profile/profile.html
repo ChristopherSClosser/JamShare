@@ -14,9 +14,13 @@
   ng-model="profileCtrl.currentSong"></select><hr>
   <ul class="song-item">
     <div>
-        <song-item uib-accordian-group class="panel-default" ng-repeat="item in profileCtrl.songs"
-        currentSong="profileCtrl.currentSong"
-        songs="profileCtrl.songs" song="item"></song-item>
+        <song-item
+          uib-accordian-group class="panel-default"
+          ng-repeat="item in profileCtrl.songs"
+          currentSong="profileCtrl.currentSong"
+          songs="profileCtrl.songs"
+          song="item">
+      </song-item>
     </div>
   </ul>
 </section>
