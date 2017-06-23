@@ -22,20 +22,13 @@ module.exports = ['$stateProvider','$urlServiceProvider',
         controller: 'SplashController',
         controllerAs: 'splashCtrl'
       },
-      // {
-      //   name: 'home',
-      //   url: '/home',
-      //   template: require('../view/home/home.html'),
-      //   controller: 'HomeController',
-      //   controllerAs: 'homeCtrl'
-      // },
-      // {
-      //   name: 'profile',
-      //   url: '/profile',
-      //   template: require('../view/profile/profile.html'),
-      //   controller: 'ProfileController',
-      //   controllerAs: 'profileCtrl'
-      // }
+      {
+        name: 'profile',
+        url: '/profile',
+        template: require('../view/profile/profile.html'),
+        controller: 'ProfileController',
+        controllerAs: 'profileCtrl'
+      }
     ]
     routes.forEach($stateProvider.state)
   }

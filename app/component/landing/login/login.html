@@ -1,4 +1,5 @@
 <section class="login-form">
+  <h2>{{  loginCtrl.title  }}</h2>
   <form
     name="loginForm"
     ng-submit="loginCtrl.login()" novalidate>
@@ -24,6 +25,17 @@
         ng-model="loginCtrl.user.password" required>
     </div>
 
-    <button class="btn-std">sign in</button>
+    <button class="btn-std">Sign In</button>
   </form>
 </section>
+<!-- <section>
+  <div class="members">
+    <p>Not a member? Leave this page</p>
+    <button name="toggle-button">
+      <a href="/#!/signup"
+      ng-click="landingCtrl.showSignup=true">
+      signup
+    </a>
+  </button>
+</div>
+</section> -->

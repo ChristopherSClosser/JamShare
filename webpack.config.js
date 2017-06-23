@@ -49,7 +49,7 @@ module.exports = {
         use: ['html-loader']
       },
       {
-        test: /\.(woff|ttf|svg|eot).*/,
+        test: /\.(woff|ttf|svg|eot|jpg).*/,
         use: 'url-loader?limit=10000&name=image/[hash].[ext]'
       },
       {

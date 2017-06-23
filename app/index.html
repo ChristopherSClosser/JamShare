@@ -6,18 +6,20 @@
     <title>JamShare</title>
   </head>
   <body>
+    <img class="title-background" ng-src="http://wallpapercave.com/wp/2ssfPNS.jpg">
+
     <header>
-      <h1 class="title">JamShare</h1>
-      <navbar>
-      </navbar>
-      <a href="#!/signup" ng-show="splashCtrl" class="button">signup</a>
+
+      <div class="title">
+        <h1>JamShare</h1>
+      </div>
+
+      <!-- <a href="#!/signup" ng-show="splashCtrl" class="button">signup</a> -->
       <!-- <login></login> -->
-      <!-- <signup></signup> -->
-      <profile></profile>
-      <a href="#!/profile" ng-click="profileCtrl.currentUser()" class="button">profile</a>
+      <!-- <a href="#!/profile" ng-click="profileCtrl.currentUser()" class="button">profile</a> -->
     </header>
     <main>
-      <!-- <div class="background"></div> -->
+      <div class="background"></div>
       <ui-view></ui-view>
     </main>
     <footer></footer>

@@ -1,23 +1,38 @@
 <section>
-  <div class="join-container"
-    ng-if="landingCtrl.showSignup">
-    <div class="join-inner">
-      <signup></signup>
-       <a href="/#!/login"
-        ng-click="landingCtrl.showSignup=false">
-        sign in
-      </a>
-    </div>
+
+  <div class="blurb">
+    <p></p>
   </div>
 
-  <div class="join-container"
-    ng-if="!landingCtrl.showSignup">
-    <div class="join-inner">
-      <login></login>
-      <a href="/#!/signup"
-        ng-click="landingCtrl.showSignup=true">
+  <div class="sign-up"
+    ng-if="landingCtrl.showSignup">
+      <signup></signup>
+      <button type="submit" value="Sign Up"> Sign Up</button>
+  </div>
+
+  <div class="sign-in"
+  ng-if="!landingCtrl.showSignup">
+  <login></login>
+</div>
+
+  <div class="members">
+    <p>For Members Only</p>
+    <button class="toggle-button">
+      <a href="/#!/login"
+      ng-if="landingCtrl.showSignup=true">
+      Sign In
+    </a>
+    </button>
+  </div>
+
+    <div class="members">
+      <p>Not a member? Leave this page</p>
+      <button name="toggle-button">
+        <a href="/#!/signup"
+        ng-if="landingCtrl.showSignup=false">
         signup
       </a>
-    </div>
-  </div>
+    </button>
+</div>
+
 </section>
