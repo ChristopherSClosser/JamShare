@@ -13,7 +13,7 @@ module.exports = {
         if(!$window.localStorage.token) {
           authService.getToken()
           .then(
-            () => $location.url('/profile'),
+            () => $location.url('/home'),
             () => $location.url('/signup')
           );
         }
@@ -23,7 +23,7 @@ module.exports = {
           $log.debug('signupCtrl.signup()')
 
           authService.signup(user)
-          .then(() => $location.url('/profile'))
+          .then(() => $location.url('/home'))
         }
       }
     }]
