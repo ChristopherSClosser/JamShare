@@ -3,7 +3,13 @@
 module.exports = {
   template: require('./signup.html'),
   controllerAs: 'signupCtrl',
-  controller: ['$log', '$location', '$window', '$rootScope', 'authService', 'songService',
+  controller: [
+    '$log',
+    '$location',
+    '$window',
+    '$rootScope',
+    'authService',
+    'songService',
     function($log, $location, $window, $rootScope, authService, songService) {//eslint-disable-line
       this.$onInit = () => {
         $log.debug('SignupController')

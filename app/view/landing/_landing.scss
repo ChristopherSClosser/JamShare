@@ -3,10 +3,43 @@
   color:  #911A1F;
 }
 
+.sign-up {
+  background-color: #C0BDA5;
+  opacity: .6;
+  text-align: center;
+  margin: 0 auto;
+  width: 25%;
+  height: 60%;
+}
+
 .sign-in {
   background-color: #C0BDA5;
   opacity: .6;
   text-align: center;
   margin: 0 auto;
   width: 25%;
+}
+
+.toggle-button {
+  text-decoration: none;
+
+}
+
+a:link {
+  text-decoration: none;
+  color: black;
+}
+
+a:visited {
+  color: black;
+}
+
+.members {
+  text-align: center;
+  z-index: 2;
+  background-color: #C0BDA5;
+  opacity: .6;
+  width: 25%;
+  margin: 0 auto;
+  margin-top: 2%;
 }
