@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 module.exports = [
   '$q',
@@ -7,131 +7,136 @@ module.exports = [
   '$rootScope',
   'authService',
   function($q, $log, $http, $rootScope, authService) {
-    $log.debug('song Service')
+    $log.debug('song Service');
 
-    let service = {}
-    service.songs = []
-    service.allSongs = []
+    let service = {};
+    service.songs = [];
+    service.allSongs = [];
 
     service.createSong = (song) => {
-      $log.debug('service.createsong')
+      $log.debug('service.createsong');
+
       return authService.getToken()
       .then(token => {
         let config = {
           headers: {
             Accept: 'application/json',
             'Content-Type': 'application/json',
-            Authorization: `Bearer ${token}`
-          }
-        }
-        return $http.post(`${__API_URL__}/api/song`, song, config)// eslint-disable-line
+            Authorization: `Bearer ${token}`,
+          },
+        };
+        return $http.post(`${__API_URL__}/api/song`, song, config);
       })
       .then(res => {
-        $log.log('song created')
-        let song = res.data
-        service.songs.unshift(song)
-        return song
+        $log.log('song created');
+        let song = res.data;
+        service.songs.unshift(song);
+        return song;
       })
       .catch(err => {
-        $log.error(err.message)
-        return $q.reject(err)
-      })
-    }
+        $log.error(err.message);
+        return $q.reject(err);
+      });
+    };
 
     service.deleteSong = (songId) => {
-      $log.debug('#songService.deletesong')
+      $log.debug('#songService.deletesong');
 
       return authService.getToken()
       .then(token => {
-        let url = `${__API_URL__}/api/song/${songId}/` // eslint-disable-line
+        let url = `${__API_URL__}/api/song/${songId}/`
         let config = {
           headers: {
             Authorization: `Bearer ${token}`,
             'Content-Type': 'application/json',
-            Accept: 'application/json, text/plain, */*'
-          }
-        }
-        return $http.delete(url, config)// eslint-disable-line
+            Accept: 'application/json, text/plain, */*',
+          },
+        };
+        return $http.delete(url, config);
       })
       .then(res => {
-        $log.log('song deleted')
+        $log.log('song deleted');
+
         service.songs.filter((ele, idx) => {
           if(ele._id === songId) service.songs.splice(idx, 1);
-        })
-        return res.status
+        });
+
+        return res.status;
       })
       .catch(err => {
-        $log.error(err.message)
-        return $q.reject(err)
-      })
-    }
+        $log.error(err.message);
+
+        return $q.reject(err);
+      });
+    };
 
     service.fetchAllSongs =() => {
-      $log.debug('fetchAllSongs')
+      $log.debug('fetchAllSongs');
+
       return $http.get(`${__API_URL__}/api/public/songs`)
       .then(res => {
-        // console.log('the res data', res.data);
-        // allSongs.push(res.data)
-        service.allSongs = res.data
-        // console.log('rootscope', service.allSongs);
-        // console.log('service songs', service.allSongs[0].name);
-        return res.data
+        service.allSongs = res.data;
+        return res.data;
       })
       .catch(err => {
-        $log.error(err.message)
-        $q.reject(err)
-      })
-    }
+        $log.error(err.message);
+        $q.reject(err);
+      });
+    };
 
     service.fetchSongs = () => {
-      $log.debug('#service.fetchSongs')
+      $log.debug('#service.fetchSongs');
+
       return authService.getToken()
       .then(token => {
         let config = {
           headers: {
             Accept: 'application/json',
             'Content-Type': 'application/json',
-            Authorization: `Bearer ${token}`
-          }
-        }
-        return $http.get(`${__API_URL__}/api/song`, config) // eslint-disable-line
+            Authorization: `Bearer ${token}`,
+          },
+        };
+
+        return $http.get(`${__API_URL__}/api/song`, config);
       })
       .then(res => {
-        $log.log('songs retrieved')
-        service.songs = res.data
-        return res.data
+        $log.log('songs retrieved');
+        service.songs = res.data;
+        return res.data;
       })
       .catch(err => {
-        $log.error(err.message)
-        $q.reject(err)
-      })
-    }
+        $log.error(err.message);
+        $q.reject(err);
+      });
+    };
 
     service.updateSong = (songId, song) => {
-      $log.debug()
+      $log.debug();
+
       return authService.getToken()
       .then(token => {
-        let url = `${__API_URL__}/api/song/${songId}` // eslint-disable-line
+        let url = `${__API_URL__}/api/song/${songId}`;
         let config = {
           headers: {
             Accept: 'application/json',
             'Content-Type': 'application/json',
-            Authorization: `Bearer ${token}`
-          }
-        }
-        return $http.put(url, song, config)
+            Authorization: `Bearer ${token}`,
+          },
+        };
+        return $http.put(url, song, config);
       })
       .then(res => {
         service.songs.forEach((ele, idx) => {
-          if(ele._id === res.data._id) service.songs[idx] = res.data
-        })
-        return res.data
+          if(ele._id === res.data._id) service.songs[idx] = res.data;
+        });
+        return res.data;
       })
       .catch(err => {
-        $log.error(err.message)
-        return $q.reject(err)
-      })
-    }
-    return service
-  }
-]
+        $log.error(err.message);
+        return $q.reject(err);
+      });
+    };
+
+    return service;
+  },
+];

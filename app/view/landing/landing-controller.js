@@ -1,17 +1,17 @@
 'use strict';
 
-require('./_landing.scss')
+require('./_landing.scss');
 
 module.exports = [
   '$log',
   '$location',
   '$rootScope',
   'authService',
-  function($log, $location, $rootScope, authService) {// eslint-disable-line
+  function($log, $location, $rootScope, authService) {
     this.$onInit = () => {
-      let url = $location.url()
-      $log.log('url', url)
-      this.showSignup = url === '/join#signup' || url === '/join'
-    }
-  }
-]
+      let url = $location.url();
+      $log.log('url', url);
+      this.showSignup = url === '/join#signup' || url === '/join';
+    };
+  },
+];

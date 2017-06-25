@@ -1,18 +1,13 @@
 <section class="profile-content">
   <img class="profile-background" ng-src="https://static1.squarespace.com/static/56f1f8fe8a65e2db95a60e3f/t/56f213b8f699bbd885a22042/1458705347401/5864713122_72a8381983_b.jpg?format=2500w">
-  <!-- <h2>{{ profileCtrl.title }}</h2> -->
-  <!-- <navbar></navbar> -->
-  <!-- <a href="#!/home" ng-click="homeCtrl.currentUser()" class="button"><button>home</button></a> -->
-
-  <create-song>
-  </create-song>
-  <br>
-  <element-container ng-if="profileCtrl.currentSong"  song="profileCtrl.currentSong"></element-container><br>
+  <create-song></create-song><br>
+  <element-container ng-if="profileCtrl.currentSong"
+    song="profileCtrl.currentSong">
+    </element-container><br>
   <label for="song-selection">select the song you would<br>like to add elements to: </label>
-  <select
-  name="song-selection"
-  ng-options="item as item.name for item in profileCtrl.songs track by item._id"
-  ng-model="profileCtrl.currentSong"></select><hr>
+  <select name="song-selection"
+    ng-options="item as item.name for item in profileCtrl.songs track by item._id"
+    ng-model="profileCtrl.currentSong"></select><hr>
   <ul class="song-item">
     <div>
         <song-item

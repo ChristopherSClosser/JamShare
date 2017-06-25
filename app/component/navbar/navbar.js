@@ -5,7 +5,7 @@ require('./_navbar.scss');
 module.exports = {
   template: require('./navbar.html'),
   controller: ['$log', '$location', '$rootScope', 'authService', NavbarController],
-  controllerAs: 'navbarCtrl'
+  controllerAs: 'navbarCtrl',
 };
 
 function NavbarController($log, $location, $rootScope, authService) {
@@ -33,14 +33,15 @@ function NavbarController($log, $location, $rootScope, authService) {
       this.checkPath();
     });
     this.signup = function(user) {
-      $log.debug('signupCtrl.signup()')
+      $log.debug('signupCtrl.signup()');
 
       authService.signup(user)
-      .then(() => $location.url('/home'))
-    }
+      .then(() => $location.url('/home'));
+    };
 
     this.logout = function() {
       $log.log('navbarCtrl.logout()');
+
       this.hideButtons = true;
       authService.logout()
       .then ( () => {

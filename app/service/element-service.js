@@ -18,7 +18,7 @@ module.exports = [
 
       return authService.getToken()
       .then(token => {
-        let url = `${__API_URL__}/api/song/${song._id}/element`;// eslint-disable-line
+        let url = `${__API_URL__}/api/song/${song._id}/element`;
         let headers = {
           Authorization: `Bearer ${token}`,
           Accept: 'application/json',
@@ -52,7 +52,7 @@ module.exports = [
 
       return authService.getToken()
       .then(token => {
-        let url = `${__API_URL__}/api/song/${song._id}/elem/${element._id}`; // eslint-disable-line
+        let url = `${__API_URL__}/api/song/${song._id}/elem/${element._id}`;
         let config = {
           headers: {
             Authorization: `Bearer ${token}`,

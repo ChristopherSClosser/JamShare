@@ -17,9 +17,13 @@ module.exports = {
       this.showEditSong = false;
       this.dayUploaded = new Date();
 
+      this.fetchAllSongs = () => {
+        return songService.fetchAllSongs();
+      };
+
       this.deleteSong = () => {
         return songService.deleteSong(this.song._id);
       };
     };
   }],
-}
+};

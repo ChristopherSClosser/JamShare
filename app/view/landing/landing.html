@@ -1,11 +1,8 @@
 <section>
-
   <img class="title-background" ng-src="http://wallpapercave.com/wp/2ssfPNS.jpg">
-
   <div class="blurb">
     <p>JamShare is an open-source, music-sharing platform designed to allow musicians to share individual components of their music, (like a guitar riff or a drum solo), and connect with other artists who are looking for a similar piece to add to their own jam.</p>
   </div>
-
   <div class="sign-in"
       ng-if="!landingCtrl.showSignup">
       <div class="members">
@@ -17,10 +14,9 @@
         </a></button>
       </div>
     </div>
-
-<div class="sign-up"
+    <div class="sign-up"
     ng-if="landingCtrl.showSignup">
-    <div class="members">
+      <div class="members">
       <signup></signup>
       <p>Already a Member?</p>
       <button><a href="/#!/login"
@@ -29,5 +25,4 @@
       </a></button>
     </div>
   </div>
-
 </section>
