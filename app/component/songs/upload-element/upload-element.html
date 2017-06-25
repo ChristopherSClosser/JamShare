@@ -1,0 +1,17 @@
+<section class="upload">
+  <h3>Upload Element</h3>
+  <form
+  ng-submit="uploadElementCtrl.uploadElement()"
+  novalidate>
+      <div class="upload-fields">
+        <label for="title">title</label>
+        <input type="text" name="title" placeholder="title" ng-model="uploadElementCtrl.element.name">
+        <label for="description">description</label>
+        <input type="text" name="description" placeholder="description" ng-model="uploadElementCtrl.element.desc">
+      </div>
+    <div>
+      <input ngf-select ng-model="uploadElementCtrl.element.file" type="file">Choose file</input>
+      <button type="submit" name="upload element">upload file</button>
+    </div>
+  </form>
+</section>

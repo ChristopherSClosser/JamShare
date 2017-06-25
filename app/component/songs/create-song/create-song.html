@@ -1,0 +1,24 @@
+<section class="create">
+  <form name="createSongForm"
+    ng-submit="createSongCtrl.createSong()">
+    <div>
+      <label for="title">title: </label>
+      <input
+        type="text"
+        name="title"
+        placeholder="title"
+        ng-model="createSongCtrl.song.name"
+        required>
+    </div>
+    <div>
+      <label for="description">desc: </label>
+      <input
+      type="text"
+      name="description"
+      placeholder="description"
+      ng-model="createSongCtrl.song.desc"
+      required>
+    </div>
+    <button type="submit">create song</button>
+  </form>
+</section>
