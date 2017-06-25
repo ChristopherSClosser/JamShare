@@ -19,11 +19,11 @@ module.exports = {
 
       this.fetchAllSongs = () => {
         return songService.fetchAllSongs();
-      }
+      };
 
       this.deleteSong = () => {
         return songService.deleteSong(this.song._id);
       };
     };
   }],
-}
+};

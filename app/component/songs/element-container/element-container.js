@@ -1,6 +1,6 @@
 'use strict';
 
-require('./_element-container.scss')
+require('./_element-container.scss');
 
 module.exports = {
   template: require('./element-container.html'),
@@ -11,6 +11,6 @@ module.exports = {
   controller: ['$log', '$rootScope', 'songService', function($log, $rootScope, songService){
     this.$onInit = () => {
       $log.debug('Element Container Controller');
-    }
-  }]
-}
+    };
+  }],
+};
