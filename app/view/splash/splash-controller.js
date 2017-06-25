@@ -1,31 +1,28 @@
 'use strict';
 
-require('./_splash.scss')
+require('./_splash.scss');
 
 module.exports = [
   '$log',
-
   '$location',
   '$rootScope',
   'songService',
-  function($log, $location, $rootScope, songService) {// eslint-disable-line
+  function($log, $location, $rootScope, songService) {
+    $log.debug('Splash controller');
+
     this.$onInit = () => {
-      let url = $location.url()
-      $log.log('url', url)
-      this.showSignup = url === '/home' || url === '/home'
+      let url = $location.url();
+      $log.log('url', url);
 
-      this.allTheSongs = []
-
+      this.showSignup = url === '/home' || url === '/home';
+      this.allTheSongs = [];
 
       return songService.fetchAllSongs()
       .then(allSongs => {
-        this.allTheSongs = allSongs
-        // console.log('elements', allSongs[4].elements[0]);
+        this.allTheSongs = allSongs;
 
-        // console.log('root', $rootScope.allSongs);
-        // console.log('flerg', allSongs);
-        return allSongs
-      })
-    }
-  }
-]
+        return allSongs;
+      });
+    };
+  },
+];
