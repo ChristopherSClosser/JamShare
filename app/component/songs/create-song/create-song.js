@@ -19,8 +19,8 @@ module.exports = {
 
           return res;
         })
-        .catch(err => $log.error(err))
-      }
-    }
-  }]
-}
+        .catch(err => $log.error(err));
+      };
+    };
+  }],
+};

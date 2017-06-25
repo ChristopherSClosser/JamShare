@@ -15,6 +15,7 @@
     "__DEBUG__": false
     },
   "rules": {
+    "comma-dangle": ["error", "always-multiline"],
     "eqeqeq": ["error", "always"],
     "no-template-curly-in-string": "error",
     "no-console": "off",
@@ -24,6 +25,7 @@
     "no-multi-spaces": ["warn", {"exceptions": { "VariableDeclarator": true }}],
     "no-trailing-spaces": "warn",
     "new-cap": "warn",
-    "no-redeclare": ["error", { "builtinGlobals": true }]
+    "no-redeclare": ["error", { "builtinGlobals": true }],
+    "semi": ["error", "always"]
   }
 }

@@ -10,9 +10,10 @@ module.exports = {
     '$rootScope',
     'authService',
     'songService',
-    function($log, $location, $window, $rootScope, authService, songService) {//eslint-disable-line
+    function($log, $location, $window, $rootScope, authService, songService) {
       this.$onInit = () => {
-        $log.debug('SignupController')
+        $log.debug('SignupController');
+
         if(!$window.localStorage.token) {
           authService.getToken()
           .then(
@@ -20,14 +21,15 @@ module.exports = {
             () => $location.url('/signup')
           );
         }
-        this.title = 'Sign Up'
+        this.title = 'Sign Up';
 
         this.signup = function(user) {
-          $log.debug('signupCtrl.signup()')
+          $log.debug('signupCtrl.signup()');
 
           authService.signup(user)
-          .then(() => $location.url('/home'))
-        }
-      }
-    }]
-}
+          .then(() => $location.url('/home'));
+        };
+      };
+    },
+  ],
+};
