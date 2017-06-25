@@ -1,4 +1,4 @@
-<section>
+<section class="edit">
   <form
     name="editSongForm"
     ng-submit="editSongCtrl.updateSong()"
@@ -9,8 +9,8 @@
     <input name="description" type="text" ng-model="editSongCtrl.song.desc"><br>
     <button class="edt-btn"
       type="submit"
-      name="submit update"
-      >update</button>
+      name="submit update">
+      update</button>
   </form>
   <button class="edt-btn"
     ng-click="editSongCtrl.deleteSong()"

@@ -1,5 +1,7 @@
 'use strict';
 
+require('./_splash.scss')
+
 module.exports = [
   '$log',
 
