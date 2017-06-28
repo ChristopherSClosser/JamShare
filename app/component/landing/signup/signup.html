@@ -3,8 +3,7 @@
   <form
     class="signup-form"
     ng-submit="signupCtrl.signup(signupCtrl.user)"
-    novalidate
-    >
+    novalidate>
 
     <input class="input-std"
       type="text"
@@ -25,12 +24,9 @@
           type="text"
           placeholder="password"
           ng-minlength="7"
-          ng-include="Number"
-          ng-include="lowercase"
           ng-model="signupCtrl.user.password"
           required>
 
-          <input type="submit" value="Sign Up">
-
+          <button class="btn-std">Sign Up</button>
   </form>
 </section>

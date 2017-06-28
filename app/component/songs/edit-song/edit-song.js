@@ -1,27 +1,32 @@
-'use strict'
+'use strict';
 
-require('./_edit-song.scss')
+require('./_edit-song.scss');
 
 module.exports = {
   template: require('./edit-song.html'),
   controllerAs: 'editSongCtrl',
   bindings: {
-    elem: '<',
-    song: '<'
+    song: '<',
   },
-  controller: ['$q', '$log', 'elemService', 'songService', function($q, $log, elemService, songService) {
+  controller: ['$log', 'songService', function($log, songService) {
     this.$onInit = () => {
-      $log.debug('editSongCtrl')
+      $log.debug('editSongCtrl');
 
-      this.deleteElem = function() {
-        $log.debug('editSongCtrl.deleteElem')
-        return elemService.deleteElem(this.song, this.elem)
+      this.updateSong = () => {
+        songService.updateSong(this.song._id, this.song)
         .then(
-          songService.fetchSongs,
+          () => $log.log('updated succesfully'),
           err => $log.error(err)
-        )
-        .catch($q.reject)
-      }
-    }
-  }]
-}
+        );
+      };
+
+      this.deleteSong = () => {
+        songService.deleteSong(this.song._id)
+        .then(
+          () => $log.log('deleted successfully'),
+          err => $log.error(err)
+        );
+      };
+    };
+  }],
+};

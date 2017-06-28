@@ -1,30 +1,31 @@
-'use strict'
+'use strict';
 
-require('./_upload-element.scss')
+require('./_upload-element.scss');
 
 module.exports = {
   template: require('./upload-element.html'),
-  controllerAs: 'uploadElemCtrl',
+  controllerAs: 'uploadElementCtrl',
   bindings: {
-    gallery: '<'
+    song: '<',
   },
   controller: [
-    '$log', 'elemService', function($log, ElemService) {
+    '$log', 'songService', 'elementService', function($log, songService, elementService) {
       this.$onInit = () => {
-        $log.log('uploadElemController initialized')
-        this.elem = {}
+        $log.debug('uploadElementController initialized');
 
-        this.uploadElem = () => {
-          ElemService.uploadElem(this.gallery, this.elem)
+        this.element = {};
+
+        this.uploadElement = () => {
+          elementService.uploadElement(songService.currentSong, this.element)
           .then(() => {
-            this.elem.name = null
-            this.elem.description = null
-            this.elem.file = null
+            this.element.name = null;
+            this.element.desc = null;
+            this.element.file = null;
           },
           err => $log.error(err)
-          )
-        }
-      }
-    }
-  ]
-}
+          );
+        };
+      };
+    },
+  ],
+};

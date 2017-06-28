@@ -3,24 +3,33 @@
 module.exports = {
   template: require('./signup.html'),
   controllerAs: 'signupCtrl',
-  controller: ['$log', '$location', '$window', 'authService', function($log, $location, $window, authService) {
-    this.$onInit = () => {
-      $log.debug('SignupController');
-      if(!$window.localStorage.token) {
-        authService.getToken()
-        .then(
-          () => $location.url('/home'),
-          () => $location.url('/signup')
-        );
-      }
-      this.title = 'Sign Up';
+  controller: [
+    '$log',
+    '$location',
+    '$window',
+    '$rootScope',
+    'authService',
+    'songService',
+    function($log, $location, $window, $rootScope, authService, songService) {
+      this.$onInit = () => {
+        $log.debug('SignupController');
 
-      this.signup = function(user) {
-        $log.debug('signupCtrl.signup()');
+        if(!$window.localStorage.token) {
+          authService.getToken()
+          .then(
+            () => $location.url('/home'),
+            () => $location.url('/signup')
+          );
+        }
+        this.title = 'Sign Up';
 
-        authService.signup(user)
-        .then(() => $location.url('/home'));
+        this.signup = function(user) {
+          $log.debug('signupCtrl.signup()');
+
+          authService.signup(user)
+          .then(() => $location.url('/home'));
+        };
       };
-    };
-  }]
+    },
+  ],
 };

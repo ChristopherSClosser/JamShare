@@ -1,4 +1,5 @@
 <section class="login-form">
+  <h2>{{  loginCtrl.title  }}</h2>
   <form
     name="loginForm"
     ng-submit="loginCtrl.login()" novalidate>
@@ -12,7 +13,6 @@
       ng-minlength="3"
       ng-model="loginCtrl.user.username" required>
 
-      <input type="text" placeholder="email">
     </div>
     <div ng-class="{
       'error': loginForm.password.$invalid && loginForm.$submitted,
@@ -22,11 +22,9 @@
         ng-disabled="loginForm.username.$invalid"
         placeholder="password"
         ng-minlength="7"
-        ng-include="Number"
-        ng-include="lowercase"
         ng-model="loginCtrl.user.password" required>
     </div>
 
-    <button class="btn-std">sign in</button>
+    <button class="btn-std">Sign In</button>
   </form>
 </section>

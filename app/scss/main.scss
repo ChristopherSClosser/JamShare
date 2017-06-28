@@ -1,0 +1,24 @@
+@font-face {
+  font-family: 'rocket';
+  src: url('../imgs/Rockit.ttf')
+}
+h1 {
+  font-family: "rocket";
+  position:relative;
+  z-index:2;
+  top:0px;
+  text-align: center;
+  color: #911A1F;
+}
+
+.title {
+  position: relative;
+  height: 100px;
+}
+input {
+  border-radius: 10px;
+}
+html {
+  background-color: #0F0F0F;
+  z-index: -160;
+}

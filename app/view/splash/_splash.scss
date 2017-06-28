@@ -1,0 +1,26 @@
+.splash-content {
+  background-color: black;
+  color: white;
+  width: 84%;
+  opacity: .6;
+  z-index: 2;
+  text-align: center;
+  margin: 0 auto;
+  width: 60%;
+}
+.splash-background {
+  z-index:-7;
+  position:absolute;
+  top:0px;
+  left:0px;
+  width:100%;
+  height:100%;
+}
+.dummytracks {
+  list-style-type: none;
+
+}
+.dummy-scroll {
+  background-color: black;
+  color: white;
+}
