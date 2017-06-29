@@ -11,15 +11,17 @@ module.exports = {
   },
   controller: [
     '$log',
+    '$rootScope',
     'elementService',
-    function($log, elementService) {
+    'songService',
+    function($log, $rootScope, elementService, songService) {
       this.$onInit = () => {
         $log.debug('elementCtrl');
 
-        this.deleteElem = () => {
-          $log.debug('#thumbnailCtrl.deleteElem');
-
-          elementService.deleteElem(this.song, this.element);
+        this.deleteElement = () => {
+          $log.debug('#elementCtrl.deleteElement');
+          $log.log('this.song in elementCtrl', this.element);
+          return elementService.deleteElement(this.element.songID, this.element);
         };
       };
     },

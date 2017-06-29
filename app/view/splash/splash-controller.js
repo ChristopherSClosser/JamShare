@@ -14,6 +14,7 @@ module.exports = [
       let url = $location.url();
       $log.log('url', url);
 
+      this.user = localStorage.user;
       this.showSignup = url === '/home' || url === '/home';
       this.allTheSongs = [];
 

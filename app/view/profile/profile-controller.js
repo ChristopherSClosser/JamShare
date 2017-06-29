@@ -20,6 +20,10 @@ module.exports = [
           () => $location.url('/profile')
         );
       }
+      if(!$window.localStorage.user) {
+        this.user = '';
+      }
+      this.user = localStorage.user;
 
       this.songs = [];
       this.allTheSongs = [];
@@ -32,7 +36,8 @@ module.exports = [
           this.songs = songs;
           this.currentSong = this.songs[0];
           songService.currentSong = this.currentSong;
-          this.user = this.currentSong.username;
+          // this.user = this.currentSong.username;
+          // console.log('this.user', this.user);
         })
         .catch(err => $log.error(err));
       };

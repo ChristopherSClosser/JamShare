@@ -41,7 +41,6 @@ module.exports = [
 
     service.deleteSong = (songId) => {
       $log.debug('#songService.deletesong');
-
       return authService.getToken()
       .then(token => {
         let url = `${__API_URL__}/api/song/${songId}/`

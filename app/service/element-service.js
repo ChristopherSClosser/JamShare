@@ -31,6 +31,7 @@ module.exports = [
           data: {
             name: element.name,
             desc: element.desc,
+            songID: song._id,
             file: element.file,
           },
         });
@@ -49,10 +50,13 @@ module.exports = [
 
     service.deleteElement = (song, element) => {
       $log.debug('#elemService.deleteElem');
-
+      console.log('song in service', song);
+      let url = `${__API_URL__}/api/song/${song}/elem/${element._id}`;
+      console.log('url', url);
+      this.element = element;
+      console.log('element', this.element);
       return authService.getToken()
       .then(token => {
-        let url = `${__API_URL__}/api/song/${song._id}/elem/${element._id}`;
         let config = {
           headers: {
             Authorization: `Bearer ${token}`,
