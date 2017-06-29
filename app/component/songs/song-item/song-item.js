@@ -13,7 +13,7 @@ module.exports = {
     this.$onInit = () => {
       console.log('hello world');
       $log.debug('Song Item Controller');
-      console.log('scott was here', this.songs);
+      console.log('this', this.song.elements);
       this.showEditSong = false;
       this.dayUploaded = new Date();
 

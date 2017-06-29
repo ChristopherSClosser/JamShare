@@ -25,7 +25,7 @@ module.exports = [
       this.allTheSongs = [];
 
       this.fetchSongs = () => {
-        $log.log(songService);
+        $log.log('songService');
 
         return songService.fetchSongs()
         .then(songs => {

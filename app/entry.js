@@ -27,6 +27,6 @@ context.keys().forEach(key => {
 
 context = require.context('./component/', true, /\.js$/);
 context.keys().forEach(key => {
-  console.log(context(key));
+  // console.log(context(key));
   jamShare.component(camelcase(path.basename(key, '.js')), context(key));
 });
