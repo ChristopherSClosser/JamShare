@@ -5,7 +5,8 @@ require('./_create-song.scss');
 module.exports = {
   template: require('./create-song.html'),
   controllerAs: 'createSongCtrl',
-  controller: ['$log', 'songService', function($log, songService){
+  controller: ['$log', '$rootScope', 'songService', function($log, $rootScope, songService){
+
     this.$onInit = () => {
       $log.debug('Create Song Controller');
       this.song = {};
@@ -16,6 +17,7 @@ module.exports = {
           let res = this.song;
           this.song.name = null;
           this.song.desc = null;
+          // $rootScope.finderloader = false;
 
           return res;
         })

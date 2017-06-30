@@ -19,7 +19,7 @@ let plugins = [
 
 module.exports = {
   entry: `${__dirname}/app/entry.js`,
-  devtool: production ? false : 'source-map',
+  // devtool: production ? false : 'source-map',
   output: {
     filename: 'bundle.js',
     path: `${__dirname}/build`,
@@ -29,12 +29,12 @@ module.exports = {
     loaders: [
       {
         test: /\.js$/,
-        exclude: /node_modules/,
+        // exclude: /node_modules/,
         use: ['babel-loader'],
       },
       {
         test: /\.html$/,
-        exclude: /node_modules/,
+        // exclude: /node_modules/,
         use: ['html-loader'],
       },
       {
