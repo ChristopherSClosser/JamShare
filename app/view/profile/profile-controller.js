@@ -36,11 +36,14 @@ module.exports = [
           this.songs = songs;
           this.currentSong = this.songs[0];
           songService.currentSong = this.currentSong;
+          $rootScope.finderloader = false;
+
           // this.user = this.currentSong.username;
           // console.log('this.user', this.user);
         })
         .catch(err => $log.error(err));
       };
+      $rootScope.finderloader = false;
 
       $rootScope.$on('locationChangeSuccess', this.fetchSongs);
       $rootScope.$on('newSongCreated', this.fetchSongs);
@@ -53,12 +56,15 @@ module.exports = [
           }
         }
       });
+      $rootScope.finderloader = false;
 
       this.fetchSongs();
 
       return songService.fetchAllSongs()
       .then(allSongs => {
         this.allTheSongs = allSongs;
+        $rootScope.finderloader = false;
+
         return allSongs;
       });
     };

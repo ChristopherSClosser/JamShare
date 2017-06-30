@@ -12,6 +12,7 @@ module.exports = [
       let url = $location.url();
       $log.log('url', url);
       this.showSignup = url === '/join#signup' || url === '/join';
+      $rootScope.finderloader = false;
     };
   },
 ];

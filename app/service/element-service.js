@@ -3,12 +3,14 @@
 module.exports = [
   '$q',
   '$log',
+  '$rootScope',
   '$http',
   '$window',
   'Upload',
   'authService',
-  function($q, $log, $http, $window, Upload, authService) {
+  function($q, $log, $rootScope, $http, $window, Upload, authService) {
     $log.debug('Element Service');
+    $rootScope.finderloader = true;
 
     let service = {};
 
@@ -39,10 +41,14 @@ module.exports = [
       .then(
         res => {
           song.elements.push(res.data);
+          $rootScope.finderloader = false;
+
           return res.data;
         },
         err => {
           $log.error(err.message);
+          $rootScope.finderloader = false;
+
           $q.reject(err);
         }
       );
@@ -78,10 +84,13 @@ module.exports = [
         },
         err => {
           $log.error(err.message);
+          $rootScope.finderloader = false;
+
           return $q.reject(err);
         }
       );
     };
+    $rootScope.finderloader = false;
 
     return service;
   },

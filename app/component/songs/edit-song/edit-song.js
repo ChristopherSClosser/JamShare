@@ -8,7 +8,8 @@ module.exports = {
   bindings: {
     song: '<',
   },
-  controller: ['$log', 'songService', function($log, songService) {
+  controller: ['$log', '$rootScope', 'songService', function($log, $rootScope, songService) {
+
     this.$onInit = () => {
       $log.debug('editSongCtrl');
 
@@ -16,6 +17,7 @@ module.exports = {
         songService.updateSong(this.song._id, this.song)
         .then(
           () => $log.log('updated succesfully'),
+          // $rootScope.finderloader = false,
           err => $log.error(err)
         );
       };
@@ -24,6 +26,7 @@ module.exports = {
         songService.deleteSong(this.song._id)
         .then(
           () => $log.log('deleted successfully'),
+          // $rootScope.finderloader = false,
           err => $log.error(err)
         );
       };
