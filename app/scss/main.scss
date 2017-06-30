@@ -29,15 +29,24 @@ main {
   margin: auto;
   text-align: center;
 }
+.loading {
+  top: 0;
+  margin-left: 13vw;
+  width: 71vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 99;
+  background-color: rgba(0, 0, 0, 0.5);
+}
 .spinner {
-  height: 70px;
+  height: 160px;
   text-align: center;
   font-size: 10px;
   width: 75%;
   position: fixed;
   top: 40%;
   left: 50%;
-  padding-left: 30%;
+  padding-left: 21vw;
   margin-left: -36.5%;
   display: -webkit-box;
 }
@@ -46,7 +55,7 @@ main {
   background-color: #333;
 
   height: 100%;
-  width: 6px;
+  width: 17px;
   // display: -webkit-box;
 
   -webkit-animation: sk-stretchdelay 1.2s infinite ease-in-out;
@@ -90,6 +99,24 @@ main {
   margin-right: 8px;
   -webkit-animation-delay: -0.8s;
   animation-delay: -0.8s;
+}
+.spinner .rect7 {
+  margin-left: 8px;
+  margin-right: 8px;
+  -webkit-animation-delay: -0.7s;
+  animation-delay: -0.7s;
+}
+.spinner .rect8 {
+  margin-left: 8px;
+  margin-right: 8px;
+  -webkit-animation-delay: -0.6s;
+  animation-delay: -0.6s;
+}
+.spinner .rect9 {
+  margin-left: 8px;
+  margin-right: 8px;
+  -webkit-animation-delay: -0.6s;
+  animation-delay: -0.6s;
 }
 @-webkit-keyframes sk-stretchdelay {
   0%, 40%, 100% { -webkit-transform: scaleY(0.1) }
