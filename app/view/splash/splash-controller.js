@@ -9,11 +9,11 @@ module.exports = [
   'songService',
   function($log, $location, $rootScope, songService) {
     $log.debug('Splash controller');
-
     this.$onInit = () => {
       let url = $location.url();
       $log.log('url', url);
 
+      this.user = localStorage.user;
       this.showSignup = url === '/home' || url === '/home';
       this.allTheSongs = [];
 
@@ -21,6 +21,7 @@ module.exports = [
       .then(allSongs => {
         this.allTheSongs = allSongs;
 
+        $rootScope.finderloader = false;
         return allSongs;
       });
     };

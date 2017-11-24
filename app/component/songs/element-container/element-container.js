@@ -9,8 +9,12 @@ module.exports = {
     song: '<',
   },
   controller: ['$log', '$rootScope', 'songService', function($log, $rootScope, songService){
+
     this.$onInit = () => {
       $log.debug('Element Container Controller');
+      console.log('this.song', this.song);
+      // $rootScope.finderloader = false;
+
     };
   }],
 };

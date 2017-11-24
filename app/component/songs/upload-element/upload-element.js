@@ -9,20 +9,26 @@ module.exports = {
     song: '<',
   },
   controller: [
-    '$log', 'songService', 'elementService', function($log, songService, elementService) {
+    '$log', '$rootScope', 'songService', 'elementService', function($log, $rootScope, songService, elementService) {
+
       this.$onInit = () => {
         $log.debug('uploadElementController initialized');
 
         this.element = {};
 
         this.uploadElement = () => {
+          $rootScope.finderloader = true;
+
           elementService.uploadElement(songService.currentSong, this.element)
           .then(() => {
             this.element.name = null;
             this.element.desc = null;
             this.element.file = null;
+            // $rootScope.finderloader = false;
           },
-          err => $log.error(err)
+          err => $log.error(err),
+          // $rootScope.finderloader = false
+
           );
         };
       };

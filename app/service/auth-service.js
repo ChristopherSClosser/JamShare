@@ -10,9 +10,11 @@ module.exports = [
 
     let service = {};
     let token = null;
+    this.user = 'user';
 
     function setToken(_token) {
       $log.debug('authService.setToken()');
+      // console.log('authService this', this.user);
 
       if(!_token) return $q.reject(new Error('No token'));
       $window.localStorage.setItem('token', _token);
@@ -65,6 +67,8 @@ module.exports = [
 
     service.login = function(user) {
       $log.debug('authService.login()');
+      $window.localStorage.setItem('user', user.username);
+
       let url = `${__API_URL__}/api/login`
       let base64 = $window.btoa(`${user.username}:${user.password}`);
       let config = {

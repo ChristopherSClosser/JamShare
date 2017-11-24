@@ -3,12 +3,14 @@
 module.exports = [
   '$q',
   '$log',
+  '$rootScope',
   '$http',
   '$window',
   'Upload',
   'authService',
-  function($q, $log, $http, $window, Upload, authService) {
+  function($q, $log, $rootScope, $http, $window, Upload, authService) {
     $log.debug('Element Service');
+    $rootScope.finderloader = true;
 
     let service = {};
 
@@ -31,6 +33,7 @@ module.exports = [
           data: {
             name: element.name,
             desc: element.desc,
+            songID: song._id,
             file: element.file,
           },
         });
@@ -38,10 +41,14 @@ module.exports = [
       .then(
         res => {
           song.elements.push(res.data);
+          $rootScope.finderloader = false;
+
           return res.data;
         },
         err => {
           $log.error(err.message);
+          $rootScope.finderloader = false;
+
           $q.reject(err);
         }
       );
@@ -49,10 +56,13 @@ module.exports = [
 
     service.deleteElement = (song, element) => {
       $log.debug('#elemService.deleteElem');
-
+      console.log('song in service', song);
+      let url = `${__API_URL__}/api/song/${song}/elem/${element._id}`;
+      console.log('url', url);
+      this.element = element;
+      console.log('element', this.element);
       return authService.getToken()
       .then(token => {
-        let url = `${__API_URL__}/api/song/${song._id}/elem/${element._id}`;
         let config = {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -74,10 +84,13 @@ module.exports = [
         },
         err => {
           $log.error(err.message);
+          $rootScope.finderloader = false;
+
           return $q.reject(err);
         }
       );
     };
+    $rootScope.finderloader = false;
 
     return service;
   },

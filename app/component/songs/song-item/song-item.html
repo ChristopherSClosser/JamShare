@@ -3,8 +3,15 @@
     <h4>created: {{ songItemCtrl.song.created | date }}</h4>
     <div class="song" ng-if="!songItemCtrl.showEditSong">
       <ul>
-        <li class="scott">title: {{ songItemCtrl.song.name }}</li>
-        <li class="scott">description: {{ songItemCtrl.song.desc }}</li>
+        <li class="songs">title: {{ songItemCtrl.song.name }}</li>
+        <li class="songs">description: {{ songItemCtrl.song.desc }}</li>
+        <ul>
+          <element
+            ng-repeat="item in songItemCtrl.song.elements"
+            elements="songItemCtrl.song.elements"
+            element="item">
+          </element>
+        </ul>
       </ul>
     </div>
    <edit-song ng-if="songItemCtrl.showEditSong" song="songItemCtrl.song"></edit-song>
